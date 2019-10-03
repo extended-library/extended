@@ -1,0 +1,47 @@
+language: node_js
+
+node_js:
+  - node
+  - lts/*
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+
+os:
+  - linux
+  - osx
+  - windows
+
+sudo: false
+
+notifications:
+  email: false
+
+cache:
+  npm
+
+stages:
+  - style
+  - test
+  - name: deploy
+    if: branch = master
+
+jobs:
+  include:
+    - stage: style
+      script:
+        - npm run check:style
+
+    - stage: test
+      script:
+        - npm test
+
+    - stage: deploy
+      deploy:
+        skip_cleanup: true
+        provider: script
+        script:
+          - npm pack --dry-run
+          - npx semantic-release

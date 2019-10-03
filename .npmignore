@@ -1,0 +1,22 @@
+# GitHub templates
+.github
+
+# Coverage directories
+coverage
+.nyc_output
+
+# source directory
+/src
+
+# build-related files
+.gitattributes
+.czrc
+.nvmrc
+.nycrc
+.releaserc
+.travis.yml
+
+# editor settings
+.idea
+.vscode
+.editorconfig

@@ -1,0 +1,37 @@
+{
+  "name": "duratio",
+  "version": "0.0.0-development",
+  "description": "## License",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp --gulpfile script/gulp/config.js",
+    "check:style": "echo \"STYLE\"",
+    "test": "echo \"TEST\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jessling/duratio.git"
+  },
+  "keywords": [],
+  "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessling/duratio/issues"
+  },
+  "homepage": "https://github.com/jessling/duratio#readme",
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/commit-analyzer": "^6.3.0",
+    "@semantic-release/git": "^7.0.16",
+    "@semantic-release/github": "^5.5.0",
+    "@semantic-release/npm": "^5.1.15",
+    "@semantic-release/release-notes-generator": "^7.3.0",
+    "gulp": "^4.0.2",
+    "mocha": "^6.2.1",
+    "pkg-dir": "^4.2.0",
+    "rollup": "^1.22.0",
+    "semantic-release": "^15.13.24",
+    "snazzy": "^8.0.0",
+    "standard": "^14.3.1"
+  }
+}
