@@ -1,8 +1,8 @@
 language: node_js
 
 node_js:
-  - node
-  # - lts/*
+  - lts/*
+  # - node
   # - 12
   # - 11
   # - 10
@@ -23,19 +23,15 @@ cache:
   npm
 
 stages:
-  - style
   - test
   - name: release
     if: branch = master
 
 jobs:
   include:
-    - stage: style
-      script:
-        - npm run check:style
-
     - stage: test
       script:
+        - npm run check:style
         - npm test
 
     - stage: release
@@ -43,5 +39,4 @@ jobs:
         skip_cleanup: true
         provider: script
         script:
-          - npm pack --dry-run
           - npx semantic-release
