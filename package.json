@@ -1,24 +1,31 @@
 {
-  "name": "duratio",
+  "name": "@jessling/duration",
   "version": "0.0.0-development",
-  "description": "## License",
-  "main": "index.js",
+  "description": "",
+  "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
+  "license": "ISC",
+  "homepage": "https://github.com/jessling/duration#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jessling/duration.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jessling/duration/issues"
+  },
+  "keywords": [
+
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "gulp": "gulp --gulpfile script/gulp/config.js",
     "check:style": "echo \"STYLE\"",
     "test": "echo \"TEST\""
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jessling/duratio.git"
-  },
-  "keywords": [],
-  "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jessling/duratio/issues"
-  },
-  "homepage": "https://github.com/jessling/duratio#readme",
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/commit-analyzer": "^6.3.0",
