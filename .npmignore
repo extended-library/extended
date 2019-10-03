@@ -5,8 +5,16 @@
 coverage
 .nyc_output
 
+# scripts directory
+/scripts
+/script
+
 # source directory
 /src
+
+# test directory
+/tests
+/test
 
 # build-related files
 .gitattributes
