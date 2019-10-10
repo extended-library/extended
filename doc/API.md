@@ -1,9 +1,4 @@
-# duration
-
-## API
-
-<!--- <% api --->
-### Functions
+## Functions
 
 <dl>
 <dt><a href="#duration">duration([duration], [defaultOrOptions], [options])</a> ⇒ <code>number</code></dt>
@@ -14,7 +9,7 @@
 </dd>
 </dl>
 
-### Typedefs
+## Typedefs
 
 <dl>
 <dt><a href="#durationOptions">durationOptions</a> : <code>Object</code></dt>
@@ -24,7 +19,7 @@
 
 <a name="duration"></a>
 
-### duration([duration], [defaultOrOptions], [options]) ⇒ <code>number</code>
+## duration([duration], [defaultOrOptions], [options]) ⇒ <code>number</code>
 Converts different types of string durations to milliseconds, seconds, minutes, and more as numbers.
 
 **Returns**: <code>number</code> - The duration in number.
@@ -71,7 +66,7 @@ duration('1 hour 23 minutes 45 seconds 600 milliseconds');
 ```
 <a name="createCustom"></a>
 
-### createCustom([duration], [defaultOrOptions], [options]) ⇒ [<code>duration</code>](#duration)
+## createCustom([duration], [defaultOrOptions], [options]) ⇒ [<code>duration</code>](#duration)
 Creates and returns a customized duration function with the given arguments.
 
 **Returns**: [<code>duration</code>](#duration) - The customized duration function.  
@@ -117,7 +112,7 @@ duration('1 hour 23 minutes 45 seconds 600 milliseconds');
 ```
 <a name="durationOptions"></a>
 
-### durationOptions : <code>Object</code>
+## durationOptions : <code>Object</code>
 Additional options to change the default behavior.
 
 **Properties**
@@ -141,17 +136,3 @@ Additional options to change the default behavior.
     </tr>  </tbody>
 </table>
 
-
-<!--- api %> --->
-
-## License
-
-ISC @ Richard King
-
-  <!--- References ======================================================== --->
-
-  <!--- Badges --->
-
-  <!--- URLs --->
-  [url-license-doc]: https://github.com/richrdkng/dmd-plugin-simple-nodejs-project/blob/master/LICENSE.md
-  [url-contrib-doc]: https://github.com/richrdkng/dmd-plugin-simple-nodejs-project/blob/master/.github/CONTRIBUTING.md

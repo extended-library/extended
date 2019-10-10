@@ -163,11 +163,11 @@ function _isValid (object) {
  *                                                                   the default behavior.
  *
  * @example
- * duration('3.5h');
- * duration('1.5h');
- * duration('175min');
- * duration('42 sec');
- * duration('300ms');
+ * duration ('3.5h');
+ * duration ('1.5h');
+ * duration ('175min');
+ * duration ('42 sec');
+ * duration ('300ms');
  * duration('1 hour 23 minutes 45 seconds 600 milliseconds');
  *
  * @returns {number} The duration in number.

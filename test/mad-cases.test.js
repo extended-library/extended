@@ -1,0 +1,148 @@
+import duration from '../src'
+
+describe('called with mad arguments', () => {
+  test('with 1ms and with whitespaces around the unit', () => {
+    expect(duration(' 1ms')).toBe(1)
+    expect(duration('1ms ')).toBe(1)
+    expect(duration(' 1ms ')).toBe(1)
+    expect(duration('   1ms')).toBe(1)
+    expect(duration('1ms   ')).toBe(1)
+    expect(duration('   1ms   ')).toBe(1)
+    expect(duration('\t1ms')).toBe(1)
+    expect(duration('1ms\t')).toBe(1)
+    expect(duration('\t 1ms')).toBe(1)
+    expect(duration('1ms \t')).toBe(1)
+  })
+
+  test('with 1s and with whitespaces around the unit', () => {
+    expect(duration(' 1s')).toBe(1000)
+    expect(duration('1s ')).toBe(1000)
+    expect(duration(' 1s ')).toBe(1000)
+    expect(duration('   1s')).toBe(1000)
+    expect(duration('1s   ')).toBe(1000)
+    expect(duration('   1s   ')).toBe(1000)
+    expect(duration('\t1s')).toBe(1000)
+    expect(duration('1s\t')).toBe(1000)
+    expect(duration('\t 1s')).toBe(1000)
+    expect(duration('1s \t')).toBe(1000)
+  })
+
+  test('with 1m and with whitespaces around the unit', () => {
+    expect(duration(' 1m')).toBe(60000)
+    expect(duration('1m ')).toBe(60000)
+    expect(duration(' 1m ')).toBe(60000)
+    expect(duration('   1m')).toBe(60000)
+    expect(duration('1m   ')).toBe(60000)
+    expect(duration('   1m   ')).toBe(60000)
+    expect(duration('\t1m')).toBe(60000)
+    expect(duration('1m\t')).toBe(60000)
+    expect(duration('\t 1m')).toBe(60000)
+    expect(duration('1m \t')).toBe(60000)
+  })
+
+  test('with 1h and with whitespaces around the unit', () => {
+    expect(duration(' 1h')).toBe(3600000)
+    expect(duration('1h ')).toBe(3600000)
+    expect(duration(' 1h ')).toBe(3600000)
+    expect(duration('   1h')).toBe(3600000)
+    expect(duration('1h   ')).toBe(3600000)
+    expect(duration('   1h   ')).toBe(3600000)
+    expect(duration('\t1h')).toBe(3600000)
+    expect(duration('1h\t')).toBe(3600000)
+    expect(duration('\t 1h')).toBe(3600000)
+    expect(duration('1h \t')).toBe(3600000)
+  })
+
+  test('with 1d and with whitespaces around the unit', () => {
+    expect(duration(' 1d')).toBe(86400000)
+    expect(duration('1d ')).toBe(86400000)
+    expect(duration(' 1d ')).toBe(86400000)
+    expect(duration('   1d')).toBe(86400000)
+    expect(duration('1d   ')).toBe(86400000)
+    expect(duration('   1d   ')).toBe(86400000)
+    expect(duration('\t1d')).toBe(86400000)
+    expect(duration('1d\t')).toBe(86400000)
+    expect(duration('\t 1d')).toBe(86400000)
+    expect(duration('1d \t')).toBe(86400000)
+  })
+
+  test('with 1w and with whitespaces around the unit', () => {
+    expect(duration(' 1w')).toBe(604800000)
+    expect(duration('1w ')).toBe(604800000)
+    expect(duration(' 1w ')).toBe(604800000)
+    expect(duration('   1w')).toBe(604800000)
+    expect(duration('1w   ')).toBe(604800000)
+    expect(duration('   1w   ')).toBe(604800000)
+    expect(duration('\t1w')).toBe(604800000)
+    expect(duration('1w\t')).toBe(604800000)
+    expect(duration('\t 1w')).toBe(604800000)
+    expect(duration('1w \t')).toBe(604800000)
+  })
+
+  test('with 1w and with whitespaces around the unit', () => {
+    expect(duration(' 1w')).toBe(604800000)
+    expect(duration('1w ')).toBe(604800000)
+    expect(duration(' 1w ')).toBe(604800000)
+    expect(duration('   1w')).toBe(604800000)
+    expect(duration('1w   ')).toBe(604800000)
+    expect(duration('   1w   ')).toBe(604800000)
+    expect(duration('\t1w')).toBe(604800000)
+    expect(duration('1w\t')).toBe(604800000)
+    expect(duration('\t 1w')).toBe(604800000)
+    expect(duration('1w \t')).toBe(604800000)
+  })
+
+  test('with the units in lower/upper/mixed case variants', () => {
+    expect(duration('1Ms')).toBe(1)
+    expect(duration('1mS')).toBe(1)
+    expect(duration('1MS')).toBe(1)
+    expect(duration('1Millisecond')).toBe(1)
+
+    expect(duration('1S')).toBe(1000)
+    expect(duration('1Second')).toBe(1000)
+
+    expect(duration('1Min')).toBe(60000)
+    expect(duration('1MIN')).toBe(60000)
+    expect(duration('1Minute')).toBe(60000)
+
+    expect(duration('1H')).toBe(3600000)
+    expect(duration('1Hr')).toBe(3600000)
+    expect(duration('1Hour')).toBe(3600000)
+
+    expect(duration('1D')).toBe(86400000)
+    expect(duration('1DAY')).toBe(86400000)
+    expect(duration('1Day')).toBe(86400000)
+
+    expect(duration('1w')).toBe(604800000)
+    expect(duration('1Wk')).toBe(604800000)
+    expect(duration('1WEEK')).toBe(604800000)
+    expect(duration('1Week')).toBe(604800000)
+  })
+
+  test('with incorrect dots/fractional points', () => {
+    expect(duration('..1s')).toBe(0)
+    expect(duration('...1s')).toBe(0)
+    expect(duration('...1.s')).toBe(0)
+    expect(duration('...1..s')).toBe(0)
+    expect(duration('...1...s')).toBe(0)
+    expect(duration('..1.1..s')).toBe(0)
+    expect(duration('...1.1...s')).toBe(0)
+    expect(duration('..1..1..s')).toBe(0)
+    expect(duration('...1...1...s')).toBe(0)
+
+    expect(duration('.1.1.s')).toBe(100)
+    expect(duration('.1..1.s')).toBe(100)
+    expect(duration('.1...1.s')).toBe(100)
+    expect(duration('1.s')).toBe(1000)
+    expect(duration('1..s')).toBe(1000)
+    expect(duration('1...s')).toBe(1000)
+  })
+
+  test('with same time units, but multiple times', () => {
+    expect(duration('100ms 200ms')).toBe(300)
+    expect(duration('500ms 400ms 300ms 200ms 100ms')).toBe(1500)
+    expect(duration('1s 2sec 3secs 4second 5seconds')).toBe(15000)
+    expect(duration('1.1h 2.2h 3.3h 4.4h 5.5h')).toBe(59400000)
+    expect(duration('0.5d 1.0day 1.5day 2.0days')).toBe(432000000)
+  })
+})

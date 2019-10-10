@@ -2,12 +2,12 @@ language: node_js
 
 node_js:
   - lts/*
-  # - node
-  # - 12
-  # - 11
-  # - 10
-  # - 9
-  # - 8
+  - node
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
 
 os:
   - linux
@@ -31,12 +31,23 @@ jobs:
   include:
     - stage: test
       script:
-        - npm run check:style
-        - npm test
+        # check code style
+        - npm run lint
+
+        # run tests with code coverage
+        - npm test -- --coverage
+
+        # report code coverage
+        - npx codecov
 
     - stage: release
+      script:
+        - echo "skipping tests"
+
       deploy:
         skip_cleanup: true
         provider: script
         script:
           - npx semantic-release
+        on:
+          branch: master
