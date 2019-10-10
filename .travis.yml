@@ -6,21 +6,21 @@ node_js:
   - 12
   - 11
   - 10
-  - 9
+  # - 9
   - 8
 
 os:
   - linux
-  # - osx
-  # - windows
+  - osx
+  - windows
 
 sudo: false
 
 notifications:
   email: false
 
-# cache:
-  # npm
+cache:
+  npm
 
 stages:
   - test
