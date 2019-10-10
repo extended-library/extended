@@ -19,8 +19,8 @@ sudo: false
 notifications:
   email: false
 
-cache:
-  npm
+# cache:
+  # npm
 
 stages:
   - test
