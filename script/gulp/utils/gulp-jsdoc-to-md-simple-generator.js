@@ -3,7 +3,7 @@
 const tap = require('gulp-tap')
 const jsdoc2md = require('jsdoc-to-markdown')
 
-module.exports = (options) => tap(file => {
+module.exports = (options) => tap(async file => {
   let plugin = []
 
   if (typeof options === 'string') {
@@ -27,7 +27,9 @@ module.exports = (options) => tap(file => {
     plugin,
     'heading-depth': headingDepth,
     // https://github.com/jsdoc2md/jsdoc-to-markdown/issues/110
-    'no-gfm': true
+    'no-gfm': true,
+    // https://github.com/jsdoc2md/jsdoc-to-markdown/blob/master/docs/API.md#jsdoc2mdgetjsdocdataoptions--promise
+    'no-cache': true
   })
 
   file.basename = 'API.md'
