@@ -16,7 +16,7 @@
 
 <p align="center">
 Human-readable, convenient, friendly durations.
-
+<br>
 Converts durations given as strings to numbers from milliseconds to weeks.
 </p>
 
