@@ -64,7 +64,9 @@
   },
   "scripts": {
     "gulp": "gulp --gulpfile script/gulp/config.js",
-    "build": "rm -rf dist && npm run --silent gulp -- build",
+    "build:bundle": "rm -rf dist && npm run --silent gulp -- bundle",
+    "build:doc": "rm -rf doc && npm run --silent gulp -- doc",
+    "build": "run-p build:*",
     "lint": "standard --verbose | snazzy",
     "test": "jest --config=.jestrc.json"
   },
@@ -73,6 +75,7 @@
     "@babel/preset-env": "^7.6.2",
     "@richrdkng/dmd-plugin-simple-nodejs-project": "1.0.0",
     "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/exec": "^3.3.7",
     "@semantic-release/git": "^7.0.16",
     "acorn": "^7.1.0",
     "babel-jest": "^24.9.0",
@@ -84,6 +87,7 @@
     "jest": "^24.9.0",
     "jsdoc-to-markdown": "^5.0.1",
     "mocha": "^6.2.1",
+    "npm-run-all": "^4.1.5",
     "pkg-dir": "^4.2.0",
     "rollup": "^1.22.0",
     "rollup-plugin-banner": "^0.2.1",

@@ -33,11 +33,19 @@ module.exports = (gulp, options) => {
 
   const dist = options.dist
 
+  let licenseContent = '<%= pkg.name %> v<%= pkg.version %> | <%= pkg.license %> @ <%= pkg.author %>'
+
+  const version = options.version
+
+  if (version) {
+    licenseContent = `<%= pkg.name %> v${version} | <%= pkg.license %> @ <%= pkg.author %>`
+  }
+
   const licenseOpts = {
     cwd,
     banner: {
       commentStyle: 'ignored',
-      content: '<%= pkg.name %> v<%= pkg.version %> | <%= pkg.license %> @ <%= pkg.author %>'
+      content: licenseContent
     }
   }
 
