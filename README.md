@@ -28,12 +28,13 @@
   <a href="https://github.com/jessling/duration/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="contribution-badge"></a>
 </p>
 
----
-
 <h3 align="center">
-  <b>Human-readable, convenient, friendly durations.</b><br>
-  Converts durations given as <b>strings to numbers</b> from milliseconds to weeks.
+  Human-readable, convenient, friendly durations.
 </h3>
+
+<p align="center">
+  Converts durations given as <b>strings to milliseconds</b> or to custom units from milliseconds to weeks.
+</p>
 
 ---
 
