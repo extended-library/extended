@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/jessling/duration/compare/v1.0.2...v1.0.3) (2019-10-11)
+
+
+### Bug Fixes
+
+* **docs:** fix header formatting ([702eb63](https://github.com/jessling/duration/commit/702eb6349ffd1b7d619366be18d51e2589070497))
+* **docs:** fix missing API doc from README issue ([58376ef](https://github.com/jessling/duration/commit/58376efb325c51a70d8f316d78479cd1f75a3377))
+* **docs:** fix README.md formatting ([2264a7a](https://github.com/jessling/duration/commit/2264a7a2187cac989fa59353211c31445b439f09))
+
 ## [1.0.2](https://github.com/jessling/duration/compare/v1.0.1...v1.0.2) (2019-10-11)
 
 
