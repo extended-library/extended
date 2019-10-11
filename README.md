@@ -48,15 +48,21 @@
 
 ## Installation
 
-```
-$ npm install @jessling/duration --save
-```
+  - **NPM:**
 
-```
-$ yarn add @jessling/duration
-```
+    ```bash
+    $ npm install @jessling/duration --save
+    ```
+
+  - **Yarn:**
+
+    ```bash
+    $ yarn add @jessling/duration
+    ```
 
 ## Usage
+
+**@jessling/duration** can be used in **Node.js**, in the **Browser**, and in every current module format, system, environment, and variety including **CommonJS**, **ESM**, **UMD**, **AMD**, **SystemJS** and ***more***.
 
   - **CommonJS:**
   
@@ -64,11 +70,29 @@ $ yarn add @jessling/duration
     const duration = require('@jessling/duration')
     ```
 
- - **ES Module:**
+  - **ES Module:**
 
     ```javascript
     import duration from '@jessling/duration'
     ```
+  
+  - **In Browser**:
+
+    ```html
+    <script src="https://cdn.jsdelivr.net/npm/@jessling/duration/dist/duration.umd.min.js"></script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log(duration('42 sec')) // === 42000
+      })
+    </script>
+    ```
+
+  - **AMD, SystemJS, IIFE, and Others:**
+
+    Check out the [**additional variations and SRI hashes on jsDelivr CDN**][url-cdn].
+
+---
 
 ## API
 
@@ -215,6 +239,8 @@ Additional options to change the default behavior.
 
 <!--- api %> --->
 
+---
+
 ## Related
 
 Check out the [official website][url-website] for more.
@@ -238,6 +264,7 @@ Find more **@jessling** packages on [NPM][url-npm] and on [GitHub][url-github].
   <!--- URLs --->
   [url-license-doc]: https://github.com/jessling/duration/blob/master/LICENSE.md
   [url-contrib-doc]: https://github.com/jessling/duration/blob/master/.github/CONTRIBUTING.md
+  [url-cdn]:         https://www.jsdelivr.com/package/npm/@jessling/duration?path=dist
   [url-npm]:         https://www.npmjs.com/search?q=keywords:@jessling
   [url-github]:      https://github.com/jessling
   [url-website]:     https://jessling.github.io
