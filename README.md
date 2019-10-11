@@ -267,23 +267,75 @@ Converts different types of string durations to milliseconds, seconds, minutes, 
     </tr>  </tbody>
 </table>
 
-**Example** *(General usage)*  
+**Example** *(General Usage)*  
 ```js
-// the returned values are in milliseconds
+// these will return milliseconds
 duration('3.5h') // === 12600000
 duration('1.5h') // === 5400000
 duration('175min') // === 10500000
-duration('42 sec') // === 42000
 duration('300ms') // === 300
-duration('1 hour 23 minutes 45 seconds 600 milliseconds') // === 5025600
 ```
-**Example** *(CommonJS)*  
+**Example** *(Unit Varieties)*  
+```js
+// singulars, plurals, and shorthands work as expected
+duration('2s') // === 2000
+duration('2sec') // === 2000
+duration('2second') // === 2000
+duration('2seconds') // === 2000
+duration('2 second') // === 2000
+duration('2 seconds') // === 2000
+```
+**Example** *(Whitespaces)*  
+```js
+// whitespaces don't matter
+duration('42 sec') // === 42000
+duration(' 42sec') // === 42000
+duration('42sec ') // === 42000
+duration('   42   sec   ') // === 42000
+```
+**Example** *(Separators)*  
+```js
+// commas, underscores, and dashes are allowed
+duration('10000 sec') // === 10000000
+duration('10,000 sec') // === 10000000
+duration('10_000 sec') // === 10000000
+duration('10-000 sec') // === 10000000
+```
+**Example** *(Unit Tolerance)*  
+```js
+// multiple units are allowed too, even the crazier ones
+duration('1 hour 23 minutes 45 seconds 600 milliseconds') // === 5025600
+duration('100ms 200ms') // === 300
+duration('500ms 400ms 300ms 200ms 100ms') // === 1500
+duration('1s 2sec 3secs 4second 5seconds') // === 15000
+duration('1.1h 2.2h 3.3h 4.4h 5.5h') // === 59400000
+duration('0.5d 1.0day 1.5day 2.0days') // === 432000000
+```
+**Example** *(Custom Fallback)*  
+```js
+// these will return the fallback duration
+duration(undefined, '1 hour') // === 3600000
+duration(null, '45 min') // === 2700000
+duration(false, '60sec') // === 60000
+```
+**Example** *(Custom Return Unit)*  
+```js
+// 1 hour in seconds
+duration('1 h', { unit: 's' }) // === 3600
+
+// 2 days in minutes
+duration('2 days', { unit: 'minutes' }) // === 2880
+
+// 3 weeks, 5 days and 12 hours in hours
+duration('3w 5days 12 h', { unit: 'h' }) // === 636
+```
+**Example** *(CommonJS Require)*  
 ```js
 const duration = require('@jessling/duration')
 
 duration('42 sec') // === 42000
 ```
-**Example** *(ES Module)*  
+**Example** *(ES Module Import)*  
 ```js
 import duration from '@jessling/duration'
 
@@ -319,13 +371,25 @@ Creates a customized duration function with the given arguments.
 ```js
 const duration = require('@jessling/duration')
 
-const custom = duration.createCustom()
+// custom duration function
+// with 1 hour as a fallback, return unit is in seconds
+const custom = duration.createCustom(null, '1 hour', { unit: 'sec' })
 ```
 **Example** *(ES Module)*  
 ```js
 import { createCustom } from '@jessling/duration'
 
-const custom = createCustom()
+// custom duration function
+// with 1 hour as a fallback, return unit is in seconds
+const custom = createCustom(null, '1 hour', { unit: 'sec' })
+```
+**Example** *(Custom Duration Function)*  
+```js
+// will return the fallback, which is "1 hour" in seconds ({ unit: 'sec' })
+custom() // === 3600
+
+// will return 2 hours in seconds, since the return unit is "sec"
+custom('2 hours') // === 7200
 ```
 <a name="module_@jessling/duration..durationOptions"></a>
 
@@ -342,16 +406,24 @@ Additional options to change the default behavior.
   </thead>
   <tbody>
 <tr>
-    <td>[unit]</td><td><code>string</code></td><td><code>&quot;&#x27;ms&#x27;&quot;</code></td><td><p>The unit in which the returned duration will be converted to.</p>
+    <td>[unit]</td><td><code>string</code></td><td><code>&quot;ms&quot;</code></td><td><p>The unit in which the returned duration will be converted to.</p>
 <p>  By default, the returned duration will be in milliseconds (<code>&#39;ms&#39;</code>).
   Possible units are the same as for the durations to parse (from milliseconds to weeks).</p>
 </td>
     </tr><tr>
-    <td>[round]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true, the returned duration will be rounded. By default, it&#39;s true.</p>
+    <td>[round]</td><td><code>boolean</code></td><td><code>true</code></td><td><p>If true, the returned duration will be rounded. By default, it&#39;s <code>true</code>.</p>
 </td>
     </tr>  </tbody>
 </table>
 
+**Example** *(Duration Options)*  
+```js
+// without fallback
+duration('42 sec', { unit: 'sec', round: false })
+
+// with fallback
+duration('42 sec', '1 sec', { unit: 'sec', round: false })
+```
 <!--- api %> --->
 
 ---
