@@ -16,8 +16,10 @@ coverage
 /tests
 /test
 
-# build-related files
+# development-related files
+.babelrc
 .gitattributes
+.jestrc.json
 .czrc
 .nvmrc
 .nycrc
