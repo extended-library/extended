@@ -430,9 +430,9 @@ duration('42 sec', '1 sec', { unit: 'sec', round: false })
 
 ## :star: Related
 
-Check out the [official website][url-website] for more tools, utilities, and packages.
+Check out the [official website][url-website] for more tools, utilities, and packages and follow on [Twitter][url-twitter].
 
-Find more **@jessling** packages on [NPM][url-npm] and on [GitHub][url-github].
+Find more **@jessling** packages on [NPM][url-npm] and [GitHub][url-github].
 
 ## :beers: Contribution
 
@@ -455,3 +455,4 @@ Find more **@jessling** packages on [NPM][url-npm] and on [GitHub][url-github].
   [url-npm]:         https://www.npmjs.com/search?q=keywords:@jessling
   [url-github]:      https://github.com/jessling
   [url-website]:     https://jessling.github.io
+  [url-twitter]:     https://twitter.com/_jessling
