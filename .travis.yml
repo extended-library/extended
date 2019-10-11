@@ -6,7 +6,7 @@ node_js:
   - 12
   - 11
   - 10
-  # - 9
+  # - 9 # at the time of this commit, TravisCI errors out on version 9
   - 8
 
 os:
@@ -21,11 +21,6 @@ notifications:
 
 cache:
   npm
-
-stages:
-  - test
-  - name: release
-    if: branch = master
 
 jobs:
   include:
