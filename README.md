@@ -40,9 +40,9 @@
 
 ---
 
-## Why?
+## :confused: Why?
 
-- **1.:** It's **more intuitive** for everyday use, when dealing with durations:
+- **1.:** It's **more intuitive** for everyday use, when dealing with durations :heart::
 
   ```javascript  
   // will log out "It is time!" in ~60,000 milliseconds
@@ -56,7 +56,7 @@
   await delay(duration('15 seconds'))
   ```
 
-- **2.:** It's easier, when **handling larger or more complex durations**:
+- **2.:** It's easier, when **handling larger or more complex durations** :muscle::
   
   ```javascript
   // general job cycle
@@ -69,7 +69,7 @@
   const notifyIn = duration('24 hours 36 minutes 49 seconds') // === 88609000
   ```
 
-- **3.:** It's **highly configurable** and the inputs are **cached**:
+- **3.:** It's **highly configurable** and the inputs are **cached** :godmode::
 
   ```javascript
   // custom return unit with a default fallback
@@ -82,7 +82,7 @@
   custom('1 hour') // === 3600 in seconds
   ```
 
-## Installation
+## :floppy_disk: Installation
 
   - **NPM:**
 
@@ -96,7 +96,7 @@
     $ yarn add @jessling/duration
     ```
 
-## Usage
+## :satisfied: Usage
 
 **@jessling/duration** can be used in **Node.js**, in the **Browser**, and ***in every*** current module format, system, environment, and variety including **CommonJS**, **ESM**, **UMD**, **AMD**, **SystemJS** and [***more***][url-cdn].
 
@@ -127,7 +127,7 @@
 
     Check out the [**additional variations and SRI hashes on jsDelivr CDN**][url-cdn].
 
-### Usage - General
+### :sunglasses: Usage - General
 
 ```javascript
 // these will return milliseconds
@@ -165,7 +165,7 @@ duration('1.1h 2.2h 3.3h 4.4h 5.5h') // === 59400000
 duration('0.5d 1.0day 1.5day 2.0days') // === 432000000
 ```
 
-### Usage - Custom Fallback
+### :yum: Usage - Custom Fallback
 
 ```javascript
 // these will return the fallback duration
@@ -174,7 +174,7 @@ duration(null, '45 min') // === 2700000
 duration(false, '60sec') // === 60000
 ```
 
-### Usage - Custom Return Unit
+### :heart_eyes: Usage - Custom Return Unit
 
 ```javascript
 // 1 hour in seconds
@@ -187,7 +187,7 @@ duration('2 days', { unit: 'minutes' }) // === 2880
 duration('3w 5days 12 h', { unit: 'h' }) // === 636
 ```
 
-### Usage - Custom Duration Function
+### :anguished: Usage - Custom Duration Function
 
 ```javascript
 // ---------- in CommonJS --------------------
@@ -217,7 +217,7 @@ custom('2 hours') // === 7200
 
 ---
 
-## API
+## :computer: API
 
 <!--- <% api --->
 <a name="module_@jessling/duration"></a>
@@ -428,19 +428,19 @@ duration('42 sec', '1 sec', { unit: 'sec', round: false })
 
 ---
 
-## Related
+## :star: Related
 
 Check out the [official website][url-website] for more tools, utilities, and packages.
 
 Find more **@jessling** packages on [NPM][url-npm] and on [GitHub][url-github].
 
-## Contribution
+## :beers: Contribution
 
 **Any contribution is ***highly*** appreciated**. To get going, check out the [**contribution guidelines**][url-contrib-doc].
 
 ***Thank you and have fun!***
 
-## License
+## :copyright: License
 
 [ISC][url-license-doc] @ [Richard King](https://www.richrdkng.com)
 
