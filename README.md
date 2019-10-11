@@ -96,7 +96,7 @@
     $ yarn add @jessling/duration
     ```
 
-## :satisfied: Usage
+## :sunglasses: Usage
 
 **@jessling/duration** can be used in **Node.js**, in the **Browser**, and ***in every*** current module format, system, environment, and variety including **CommonJS**, **ESM**, **UMD**, **AMD**, **SystemJS** and [***more***][url-cdn].
 
@@ -127,7 +127,7 @@
 
     Check out the [**additional variations and SRI hashes on jsDelivr CDN**][url-cdn].
 
-### :sunglasses: Usage - General
+### :satisfied: Usage - General
 
 ```javascript
 // these will return milliseconds
