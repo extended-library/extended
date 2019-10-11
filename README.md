@@ -1,24 +1,39 @@
 # @jessling/duration
 
-[![release][badge-npm]][url-npm]
-[![ci][badge-ci]][url-ci]
-[![coverage][badge-coverage]][url-coverage]
-[![deps][badge-greenkeeper]][url-greenkeeper]
-[![docs][badge-docs-check]][url-docs-check]
+<!-- Badges - 1st row -->
+<p align="center">
+  <!-- NPM badge -->
+  <a href="https://www.npmjs.com/package/@jessling/duration"><img src="https://img.shields.io/npm/v/@jessling/duration?color=brightgreen&style=flat-square" alt="release-badge"></a>
+  <!-- CI badge -->
+  <a href="https://travis-ci.org/jessling/duration"><img src="https://img.shields.io/travis/jessling/duration.svg?style=flat-square" alt="ci-badge"></a>
+  <!-- Coverage badge -->
+  <a href="https://codecov.io/gh/jessling/duration"><img src="https://img.shields.io/codecov/c/github/jessling/duration?style=flat-square" alt="coverage-badge"></a>
+  <!-- Dependency badge -->
+  <a href="https://greenkeeper.io"><img src="https://badges.greenkeeper.io/jessling/duration.svg?style=flat-square" alt="dependency-badge"></a>
+  <!-- Documentation badge -->
+  <a href="https://github.com/jessling/duration/blob/master/doc/API.md"><img src="https://inch-ci.org/github/jessling/duration.svg?branch=master&style=flat-square" alt="documentation-badge"></a>
+</p>
 
-[![style][badge-style]][url-style]
-[![commit][badge-commit]][url-commit]
-[![workflow][badge-release]][url-release]
-[![license][badge-license-isc]][url-license-doc]
-[![contrib][badge-contrib]][url-contrib-doc]
+<!-- Badges - 2nd row -->
+<p align="center">
+  <!-- Code style badge -->
+  <a href="https://standardjs.com"><img src="https://img.shields.io/badge/style-standardjs-f1d300.svg?style=flat-square" alt="code-style-badge"></a>
+  <!-- Commit style badge -->
+  <a href="https://commitizen.github.io/cz-cli"><img src="https://img.shields.io/badge/commit-commitizen-fe7d37.svg?style=flat-square" alt="commit-style-badge"></a>
+  <!-- Release workflow badge -->
+  <a href="https://semantic-release.gitbook.io/semantic-release"><img src="https://img.shields.io/badge/release-semantic--release-e10079.svg?style=flat-square" alt="release-workflow-badge"></a>
+  <!-- License badge -->
+  <a href="https://github.com/jessling/duration/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square" alt="license-badge"></a>
+  <!-- Contribution badge -->
+  <a href="https://github.com/jessling/duration/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="contribution-badge"></a>
+</p>
 
 ---
 
-<p align="center">
-<b>Human-readable, convenient, friendly durations.</b>
-<br>
-Converts durations given as strings to numbers from milliseconds to weeks.
-</p>
+<h3 align="center">
+  <b>Human-readable, convenient, friendly durations.</b><br>
+  Converts durations given as <b>strings to numbers</b> from milliseconds to weeks.
+</h3>
 
 ---
 
@@ -59,8 +74,9 @@ yarn add @jessling/duration
 
 ## Contribution
 
-**Any contribution is ***highly*** appreciated**. To get going, check out the
-[**contribution guidelines**][url-contrib-doc]. ***Thank you and have fun!***
+**Any contribution is ***highly*** appreciated**. To get going, check out the [**contribution guidelines**][url-contrib-doc].
+
+***Thank you and have fun!***
 
 ## License
 
@@ -69,25 +85,7 @@ yarn add @jessling/duration
   <!--- References ======================================================== --->
 
   <!--- Badges -->
-  [badge-npm]:         https://img.shields.io/npm/v/@jessling/duration?color=brightgreen&style=flat-square
-  [badge-ci]:          https://img.shields.io/travis/jessling/duration.svg?style=flat-square
-  [badge-coverage]:    https://img.shields.io/codecov/c/github/jessling/duration?style=flat-square
-  [badge-greenkeeper]: https://badges.greenkeeper.io/jessling/duration.svg?style=flat-square
-  [badge-docs-check]:  https://inch-ci.org/github/jessling/duration.svg?branch=master&style=flat-square
-  [badge-license-isc]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
-  [badge-contrib]:     https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
-  [badge-style]:       https://img.shields.io/badge/style-standardjs-f1d300.svg?style=flat-square
-  [badge-commit]:      https://img.shields.io/badge/commit-commitizen-fe7d37.svg?style=flat-square
-  [badge-release]:     https://img.shields.io/badge/release-semantic--release-e10079.svg?style=flat-square
   
   <!--- URLs --->
-  [url-npm]:         https://www.npmjs.com/package/@jessling/duration
-  [url-ci]:          https://travis-ci.org/jessling/duration
-  [url-coverage]:    https://codecov.io/gh/jessling/duration
-  [url-greenkeeper]: https://greenkeeper.io
-  [url-docs-check]:  https://inch-ci.org/github/jessling/duration
-  [url-style]:       https://standardjs.com
-  [url-commit]:      https://commitizen.github.io/cz-cli
-  [url-release]:     https://semantic-release.gitbook.io/semantic-release
   [url-license-doc]: https://github.com/jessling/duration/blob/master/LICENSE.md
   [url-contrib-doc]: https://github.com/jessling/duration/blob/master/.github/CONTRIBUTING.md
