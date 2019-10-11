@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/jessling/duration/compare/v1.0.3...v1.0.4) (2019-10-11)
+
+
+### Bug Fixes
+
+* **docs:** add a missing keyword and a "Related" section ([c46cf28](https://github.com/jessling/duration/commit/c46cf28495fdcb184cf0747cee03902af4913149))
+
 ## [1.0.3](https://github.com/jessling/duration/compare/v1.0.2...v1.0.3) (2019-10-11)
 
 
