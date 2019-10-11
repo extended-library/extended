@@ -42,9 +42,42 @@
 
 ## Why?
 
-- **1.:** ...
-- **2.:** ...
-- **3.:** ...
+- **1.:** It's **more intuitive for everyday use**, when dealing with durations:
+
+  ```javascript  
+  // will log out "It is time!" in ~60,000 milliseconds
+  setTimeout(() => console.log('It is time!'), duration('1 min'))
+
+  // 15552000000 milliseconds from now
+  const date = new Date(Date.now() + duration('180 days'))
+  document.cookie = 'value=42;expires=' + date.toUTCString() + ';path=/')
+
+  // delays the execution for ~15,000 milliseconds
+  await delay(duration('15 seconds'))
+  ```
+
+- **2.:** It's easier, when handling **larger or more complex durations**:
+  
+  ```javascript
+  // general job cycle
+  const cycle = duration('36 hours') // === 129600000 in milliseconds
+
+  // movie playtime
+  const length = duration('2h 41m') // === 9660000 in milliseconds
+
+  // custom notification set by a user
+  const notifyIn = duration('24 hours 36 minutes 49 seconds') // === 88609000
+  ```
+
+- **3.:** It's **highly configurable** and the inputs are **cached**:
+
+  ```javascript
+  // custom return unit with a default fallback
+  duration('42 hours', '1 hour', { unit: 'seconds' })
+
+  // create a custom duration function with predefined arguments
+  createCustom(0, '1 day', { unit: 'seconds', round: false })
+  ```
 
 ## Installation
 
@@ -62,7 +95,7 @@
 
 ## Usage
 
-**@jessling/duration** can be used in **Node.js**, in the **Browser**, and in every current module format, system, environment, and variety including **CommonJS**, **ESM**, **UMD**, **AMD**, **SystemJS** and ***more***.
+**@jessling/duration** can be used in **Node.js**, in the **Browser**, and ***in every*** current module format, system, environment, and variety including **CommonJS**, **ESM**, **UMD**, **AMD**, **SystemJS** and [***more***][url-cdn].
 
   - **CommonJS:**
   
@@ -79,8 +112,7 @@
   - **In Browser**:
 
     ```html
-    <script src="https://cdn.jsdelivr.net/npm/@jessling/duration/dist/duration.umd.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@jessling/duration/dist/duration.umd.min.js"></script>    
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         console.log(duration('42 sec')) // === 42000
