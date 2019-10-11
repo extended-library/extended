@@ -267,7 +267,7 @@ Additional options to change the default behavior.
 
 ## Related
 
-Check out the [official website][url-website] for more.
+Check out the [official website][url-website] for more tools, utilities, and packages.
 
 Find more **@jessling** packages on [NPM][url-npm] and on [GitHub][url-github].
 
