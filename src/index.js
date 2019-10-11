@@ -134,9 +134,11 @@ function _isValid (object) {
  * @typedef {Object} durationOptions
  *
  * @property {string}  [unit='ms']  - The unit in which the returned duration will be converted to.
- *                                    By default, the returned duration will be in milliseconds ('ms').
- *                                    Possible units are the same as for the durations to parse
- *                                    (from milliseconds to weeks).
+ *
+ *   By default, the returned duration will be in milliseconds ('ms').
+ *   Possible units are the same as for the durations to parse
+ *   (from milliseconds to weeks).
+ *
  * @property {boolean} [round=true] - If true, the returned duration will be rounded. By default, it's true.
  */
 
@@ -146,21 +148,22 @@ function _isValid (object) {
  * @function duration
  *
  * @param {string|number|*} [duration] - The duration(s) to parse.
- *                                       Multiple durations are allowed in the string separated by spaces and/or commas.
- *                                       Valid duration units: weeks, days, hours, minutes, seconds, and milliseconds.
- *                                       Possible duration unit variations:
- *                                           - milliseconds: 'ms', 'millisecond', 'milliseconds'
- *                                           - seconds:      's',  'sec',         'second',      'seconds'
- *                                           - minutes:      'm',  'min',         'minute',      'minutes'
- *                                           - hours:        'h',  'hour',        'hours'
- *                                           - days:         'd',  'day',         'days'
- *                                           - weeks:        'w',  'week',        'weeks'
  *
- * @param {string|number|durationOptions} [defaultOrOptions] - The default duration as a fallback or additional
- *                                                                   options. If unspecified, the default fallback
- *                                                                   duration is 0 (zero).
- * @param {durationOptions}               [options]          - Additional options to change
- *                                                                   the default behavior.
+ *   Multiple durations are allowed in the string separated by spaces and/or commas.
+ *
+ *   Valid duration units: weeks, days, hours, minutes, seconds, and milliseconds.
+ *   Possible duration unit variations:
+ *    - milliseconds: 'ms', 'millisecond', 'milliseconds'
+ *    - seconds:      's',  'sec',         'second',      'seconds'
+ *    - minutes:      'm',  'min',         'minute',      'minutes'
+ *    - hours:        'h',  'hour',        'hours'
+ *    - days:         'd',  'day',         'days'
+ *    - weeks:        'w',  'week',        'weeks'
+ *
+ * @param {string|number|durationOptions} [defaultOrOptions] - The default duration as a fallback or additional options.
+ *                                                             If unspecified, the default fallback duration is 0 (zero).
+ *
+ * @param {durationOptions}               [options]          - Additional options to change the default behavior.
  *
  * @example
  * duration('3.5h');
@@ -258,21 +261,22 @@ function duration (duration, defaultOrOptions, options) {
  * @function createCustom
  *
  * @param {string|number|*} [duration] - The duration(s) to parse.
- *                                       Multiple durations are allowed in the string separated by spaces and/or commas.
- *                                       Valid duration units: weeks, days, hours, minutes, seconds, and milliseconds.
- *                                       Possible duration unit variations:
- *                                           - milliseconds: 'ms', 'millisecond', 'milliseconds'
- *                                           - seconds:      's',  'sec',         'second',      'seconds'
- *                                           - minutes:      'm',  'min',         'minute',      'minutes'
- *                                           - hours:        'h',  'hour',        'hours'
- *                                           - days:         'd',  'day',         'days'
- *                                           - weeks:        'w',  'week',        'weeks'
  *
- * @param {string|number|durationOptions} [defaultOrOptions] - The default duration as a fallback or additional
- *                                                                   options. If unspecified, the default fallback
- *                                                                   duration is 0 (zero).
- * @param {durationOptions}               [options]          - Additional options to change
- *                                                                   the default behavior.
+ *   Multiple durations are allowed in the string separated by spaces and/or commas.
+ *
+ *   Valid duration units: weeks, days, hours, minutes, seconds, and milliseconds.
+ *   Possible duration unit variations:
+ *    - milliseconds: 'ms', 'millisecond', 'milliseconds'
+ *    - seconds:      's',  'sec',         'second',      'seconds'
+ *    - minutes:      'm',  'min',         'minute',      'minutes'
+ *    - hours:        'h',  'hour',        'hours'
+ *    - days:         'd',  'day',         'days'
+ *    - weeks:        'w',  'week',        'weeks'
+ *
+ * @param {string|number|durationOptions} [defaultOrOptions] - The default duration as a fallback or additional options.
+ *                                                             If unspecified, the default fallback duration is 0 (zero).
+ *
+ * @param {durationOptions}               [options]          - Additional options to change the default behavior.
  *
  * @example
  * duration('3.5h');
