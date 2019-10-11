@@ -28,6 +28,8 @@
   <a href="https://github.com/jessling/duration/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="contribution-badge"></a>
 </p>
 
+---
+
 <h3 align="center">
   Human-readable, convenient, friendly durations.
 </h3>
