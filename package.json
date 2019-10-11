@@ -1,7 +1,7 @@
 {
   "name": "@jessling/duration",
   "version": "0.0.0-development",
-  "description": "Human-readable, convenient, friendly durations. Converts durations given as strings to numbers from milliseconds to weeks.",
+  "description": "Human-readable, convenient, friendly durations. Converts durations given as strings to milliseconds or to custom units from milliseconds to weeks.",
   "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
   "license": "ISC",
   "main": "dist/duration.cjs.js",
