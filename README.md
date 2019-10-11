@@ -42,7 +42,7 @@
 
 ## Why?
 
-- **1.:** It's **more intuitive for everyday use**, when dealing with durations:
+- **1.:** It's **more intuitive** for everyday use, when dealing with durations:
 
   ```javascript  
   // will log out "It is time!" in ~60,000 milliseconds
@@ -56,7 +56,7 @@
   await delay(duration('15 seconds'))
   ```
 
-- **2.:** It's easier, when handling **larger or more complex durations**:
+- **2.:** It's easier, when **handling larger or more complex durations**:
   
   ```javascript
   // general job cycle
@@ -123,6 +123,92 @@
   - **AMD, SystemJS, IIFE, and Others:**
 
     Check out the [**additional variations and SRI hashes on jsDelivr CDN**][url-cdn].
+
+### General Usage
+
+```javascript
+// these will return milliseconds
+duration('3.5h') // === 12600000
+duration('1.5h') // === 5400000
+duration('175min') // === 10500000
+duration('300ms') // === 300
+
+// singulars, plurals, and shorthands work as expected
+duration('2s') // === 2000
+duration('2sec') // === 2000
+duration('2second') // === 2000
+duration('2seconds') // === 2000
+duration('2 second') // === 2000
+duration('2 seconds') // === 2000
+
+// whitespaces don't matter
+duration('42 sec') // === 42000
+duration(' 42sec') // === 42000
+duration('42sec ') // === 42000
+duration('   42   sec   ') // === 42000
+
+// commas, underscores, and dashes are allowed
+duration('10000 sec') // === 10000000
+duration('10,000 sec') // === 10000000
+duration('10_000 sec') // === 10000000
+duration('10-000 sec') // === 10000000
+
+// multiple units are allowed too, even the crazier ones
+duration('1 hour 23 minutes 45 seconds 600 milliseconds') // === 5025600
+duration('100ms 200ms') // === 300
+duration('500ms 400ms 300ms 200ms 100ms') // === 1500
+duration('1s 2sec 3secs 4second 5seconds') // === 15000
+duration('1.1h 2.2h 3.3h 4.4h 5.5h') // === 59400000
+duration('0.5d 1.0day 1.5day 2.0days') // === 432000000
+```
+
+### Custom Fallback
+
+```javascript
+// these will return the fallback duration
+duration(undefined, '1 hour') // === 3600000
+duration(null, '45 min') // === 2700000
+duration(false, '60sec') // === 60000
+```
+
+### Custom Return Unit
+
+```javascript
+// 1 hour in seconds
+duration('1 h', { unit: 's' }) // === 3600
+
+// 2 days in minutes
+duration('2 days', { unit: 'minutes' }) // === 2880
+
+// 3 weeks, 5 days and 12 hours in hours
+duration('3w 5days 12 h', { unit: 'h' }) // === 636
+```
+
+### Custom Duration Function
+
+```javascript
+// ---------- in CommonJS --------------------
+const duration = require('@jessling/duration')
+
+// 1 hour as a fallback, return unit is in seconds
+const custom = duration.createCustom(null, '1 hour', { unit: 'sec' })
+```
+
+```javascript
+// ---------- in ES Module ----------------------
+import { createCustom } from '@jessling/duration'
+
+// 1 hour as a fallback, return unit is in seconds
+const custom = createCustom(null, '1 hour', { unit: 'sec' })
+```
+
+```javascript
+// will return the fallback, which is "1 hour" in seconds ({ unit: 'sec' })
+custom() // === 3600
+
+// will return 2 hours in seconds, since the return unit is "sec"
+custom('2 hours') // === 7200
+```
 
 ---
 
