@@ -14,9 +14,13 @@
 
 ---
 
-**Human-readable, convenient, friendly durations.**
+<p align="center">
+Human-readable, convenient, friendly durations.
+</p>
 
-Converts durations given as **strings to numbers** from **milliseconds to weeks**.
+<p align="center">
+Converts durations given as strings to numbers from milliseconds to weeks.
+</p>
 
 ---
 
