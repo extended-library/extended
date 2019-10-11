@@ -101,18 +101,10 @@
 
 ### @jessling/duration
 
-- [@jessling/duration](#jesslingduration)
-  - [Why?](#why)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [API](#api)
-    - [@jessling/duration](#jesslingduration-1)
-      - [@jessling/duration~duration([duration], [defaultOrOptions], [options]) ⇒ <code>number</code>](#jesslingdurationdurationduration-defaultoroptions-options-%e2%87%92-codenumbercode)
-      - [@jessling/duration~createCustom([duration], [defaultOrOptions], [options]) ⇒ <code>duration</code>](#jesslingdurationcreatecustomduration-defaultoroptions-options-%e2%87%92-codedurationcode)
-      - [@jessling/duration~durationOptions : <code>Object</code>](#jesslingdurationdurationoptions--codeobjectcode)
-  - [Related](#related)
-  - [Contribution](#contribution)
-  - [License](#license)
+* [@jessling/duration](#module_@jessling/duration)
+    * [~duration([duration], [defaultOrOptions], [options])](#module_@jessling/duration..duration) ⇒ <code>number</code>
+    * [~createCustom([duration], [defaultOrOptions], [options])](#module_@jessling/duration..createCustom) ⇒ <code>duration</code>
+    * [~durationOptions](#module_@jessling/duration..durationOptions) : <code>Object</code>
 
 <a name="module_@jessling/duration..duration"></a>
 
