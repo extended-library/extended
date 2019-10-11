@@ -137,11 +137,10 @@ function _isValid (object) {
  *
  * @typedef {Object} durationOptions
  *
- * @property {string}  [unit='ms'] - The unit in which the returned duration will be converted to.
+ * @property {string} [unit='ms'] - The unit in which the returned duration will be converted to.
  *
- *   By default, the returned duration will be in milliseconds ('ms').
- *   Possible units are the same as for the durations to parse
- *   (from milliseconds to weeks).
+ *   By default, the returned duration will be in milliseconds (`'ms'`).
+ *   Possible units are the same as for the durations to parse (from milliseconds to weeks).
  *
  * @property {boolean} [round=true] - If true, the returned duration will be rounded. By default, it's true.
  */
@@ -155,14 +154,15 @@ function _isValid (object) {
  *
  *   Multiple durations are allowed in the string separated by spaces and/or commas.
  *
- *   Valid duration units: weeks, days, hours, minutes, seconds, and milliseconds.
+ *   Valid duration units: **weeks**, **days**, **hours**, **minutes**, **seconds**, and **milliseconds**.
  *   Possible duration unit variations:
- *    - milliseconds: 'ms', 'millisecond', 'milliseconds'
- *    - seconds:      's',  'sec',         'second',      'seconds'
- *    - minutes:      'm',  'min',         'minute',      'minutes'
- *    - hours:        'h',  'hour',        'hours'
- *    - days:         'd',  'day',         'days'
- *    - weeks:        'w',  'week',        'weeks'
+ *
+ *   - milliseconds: `'ms'`, `'millisecond'`, `'milliseconds'`
+ *   - seconds:      `'s'`,  `'sec'`,         `'second'`,      `'seconds'`
+ *   - minutes:      `'m'`,  `'min'`,         `'minute'`,      `'minutes'`
+ *   - hours:        `'h'`,  `'hour'`,        `'hours'`
+ *   - days:         `'d'`,  `'day'`,         `'days'`
+ *   - weeks:        `'w'`,  `'week'`,        `'weeks'`
  *
  * @param {string|number|durationOptions} [defaultOrOptions] - The default duration as a fallback or additional options.
  *
@@ -171,15 +171,26 @@ function _isValid (object) {
  * @param {durationOptions} [options] - Additional options to change the default behavior.
  *
  * @example <caption>General usage</caption>
- * duration('3.5h');
- * duration('1.5h');
- * duration('175min');
- * duration('42 sec');
- * duration('300ms');
- * duration('1 hour 23 minutes 45 seconds 600 milliseconds');
+ * // the returned values are in milliseconds
+ * duration('3.5h') // === 12600000
+ * duration('1.5h') // === 5400000
+ * duration('175min') // === 10500000
+ * duration('42 sec') // === 42000
+ * duration('300ms') // === 300
+ * duration('1 hour 23 minutes 45 seconds 600 milliseconds') // === 5025600
+ *
+ * @example <caption>CommonJS</caption>
+ * const duration = require('@jessling/duration')
+ *
+ * duration('42 sec') // === 42000
+ *
+ * @example <caption>ES Module</caption>
+ * import duration from '@jessling/duration'
+ *
+ * duration('42 sec') // === 42000
  *
  * @returns {number} The duration in number.
- *                   If the given duration is invalid, the returned duration will be 0 (zero).
+ *                   If the given duration is invalid, the returned duration will be `0` *(zero)*.
  */
 function duration (duration, defaultOrOptions, options) {
   // process options --------------------------------------------------------------------------------------------------*
@@ -261,35 +272,24 @@ function duration (duration, defaultOrOptions, options) {
 }
 
 /**
- * Creates and returns a customized duration function with the given arguments.
+ * Creates a customized duration function with the given arguments.
  *
+ * @see {@link @jessling/duration~duration}
  * @function createCustom
  *
  * @param {string|number|*} [duration] - The duration(s) to parse.
- *
- *   Multiple durations are allowed in the string separated by spaces and/or commas.
- *
- *   Valid duration units: weeks, days, hours, minutes, seconds, and milliseconds.
- *   Possible duration unit variations:
- *    - milliseconds: 'ms', 'millisecond', 'milliseconds'
- *    - seconds:      's',  'sec',         'second',      'seconds'
- *    - minutes:      'm',  'min',         'minute',      'minutes'
- *    - hours:        'h',  'hour',        'hours'
- *    - days:         'd',  'day',         'days'
- *    - weeks:        'w',  'week',        'weeks'
- *
  * @param {string|number|durationOptions} [defaultOrOptions] - The default duration as a fallback or additional options.
- *                                                             If unspecified, the default fallback duration is 0 (zero).
+ * @param {durationOptions} [options] - Additional options to change the default behavior.
  *
- * @param {durationOptions}               [options]          - Additional options to change the default behavior.
+ * @example <caption>CommonJS</caption>
+ * const duration = require('@jessling/duration')
  *
- * @example
- * duration('3.5h');
- * duration('1.5h');
- * duration('175min');
- * duration('42 sec');
- * duration('300ms');
- * duration('1 hour 23 minutes 45 seconds 600 milliseconds');
+ * const custom = duration.createCustom()
+ *
+ * @example <caption>ES Module</caption>
+ * import { createCustom } from '@jessling/duration'
+ *
+ * const custom = createCustom()
  *
  * @returns {duration} The customized duration function.
  */
