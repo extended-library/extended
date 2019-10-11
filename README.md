@@ -73,10 +73,13 @@
 
   ```javascript
   // custom return unit with a default fallback
-  duration('42 hours', '1 hour', { unit: 'seconds' })
+  duration('42 hours', '1 hour', { unit: 'seconds' }) // === 151200 in seconds
 
   // create a custom duration function with predefined arguments
-  createCustom(0, '1 day', { unit: 'seconds', round: false })
+  const custom = createCustom(0, '1 day', { unit: 'seconds' })
+
+  // will return the given duration in seconds ({ unit: 'seconds' })
+  custom('1 hour') // === 3600 in seconds
   ```
 
 ## Installation
@@ -124,7 +127,7 @@
 
     Check out the [**additional variations and SRI hashes on jsDelivr CDN**][url-cdn].
 
-### General Usage
+### Usage - General
 
 ```javascript
 // these will return milliseconds
@@ -162,7 +165,7 @@ duration('1.1h 2.2h 3.3h 4.4h 5.5h') // === 59400000
 duration('0.5d 1.0day 1.5day 2.0days') // === 432000000
 ```
 
-### Custom Fallback
+### Usage - Custom Fallback
 
 ```javascript
 // these will return the fallback duration
@@ -171,7 +174,7 @@ duration(null, '45 min') // === 2700000
 duration(false, '60sec') // === 60000
 ```
 
-### Custom Return Unit
+### Usage - Custom Return Unit
 
 ```javascript
 // 1 hour in seconds
@@ -184,13 +187,14 @@ duration('2 days', { unit: 'minutes' }) // === 2880
 duration('3w 5days 12 h', { unit: 'h' }) // === 636
 ```
 
-### Custom Duration Function
+### Usage - Custom Duration Function
 
 ```javascript
 // ---------- in CommonJS --------------------
 const duration = require('@jessling/duration')
 
-// 1 hour as a fallback, return unit is in seconds
+// custom duration function
+// with 1 hour as a fallback, return unit is in seconds
 const custom = duration.createCustom(null, '1 hour', { unit: 'sec' })
 ```
 
@@ -198,7 +202,8 @@ const custom = duration.createCustom(null, '1 hour', { unit: 'sec' })
 // ---------- in ES Module ----------------------
 import { createCustom } from '@jessling/duration'
 
-// 1 hour as a fallback, return unit is in seconds
+// custom duration function
+// with 1 hour as a fallback, return unit is in seconds
 const custom = createCustom(null, '1 hour', { unit: 'sec' })
 ```
 
