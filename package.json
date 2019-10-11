@@ -7,6 +7,10 @@
   "main": "dist/duration.cjs.js",
   "module": "dist/duration.esm.js",
   "browser": "dist/duration.umd.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
   "homepage": "https://github.com/jessling/duration#readme",
   "repository": {
     "type": "git",

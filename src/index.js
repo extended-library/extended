@@ -1,4 +1,8 @@
 /**
+ * @module @jessling/duration
+ */
+
+/**
  * A week in milliseconds.
  *
  * @private
@@ -133,7 +137,7 @@ function _isValid (object) {
  *
  * @typedef {Object} durationOptions
  *
- * @property {string}  [unit='ms']  - The unit in which the returned duration will be converted to.
+ * @property {string}  [unit='ms'] - The unit in which the returned duration will be converted to.
  *
  *   By default, the returned duration will be in milliseconds ('ms').
  *   Possible units are the same as for the durations to parse
@@ -161,11 +165,12 @@ function _isValid (object) {
  *    - weeks:        'w',  'week',        'weeks'
  *
  * @param {string|number|durationOptions} [defaultOrOptions] - The default duration as a fallback or additional options.
- *                                                             If unspecified, the default fallback duration is 0 (zero).
  *
- * @param {durationOptions}               [options]          - Additional options to change the default behavior.
+ *   If unspecified, the default fallback duration is 0 (zero).
  *
- * @example
+ * @param {durationOptions} [options] - Additional options to change the default behavior.
+ *
+ * @example <caption>General usage</caption>
  * duration('3.5h');
  * duration('1.5h');
  * duration('175min');
