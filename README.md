@@ -49,11 +49,11 @@
 ## Installation
 
 ```
-npm install @jessling/duration --save
+$ npm install @jessling/duration --save
 ```
 
 ```
-yarn add @jessling/duration
+$ yarn add @jessling/duration
 ```
 
 ## Usage
@@ -77,10 +77,18 @@ yarn add @jessling/duration
 
 ### @jessling/duration
 
-* [@jessling/duration](#module_@jessling/duration)
-    * [~duration([duration], [defaultOrOptions], [options])](#module_@jessling/duration..duration) ⇒ <code>number</code>
-    * [~createCustom([duration], [defaultOrOptions], [options])](#module_@jessling/duration..createCustom) ⇒ <code>duration</code>
-    * [~durationOptions](#module_@jessling/duration..durationOptions) : <code>Object</code>
+- [@jessling/duration](#jesslingduration)
+  - [Why?](#why)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [API](#api)
+    - [@jessling/duration](#jesslingduration-1)
+      - [@jessling/duration~duration([duration], [defaultOrOptions], [options]) ⇒ <code>number</code>](#jesslingdurationdurationduration-defaultoroptions-options-%e2%87%92-codenumbercode)
+      - [@jessling/duration~createCustom([duration], [defaultOrOptions], [options]) ⇒ <code>duration</code>](#jesslingdurationcreatecustomduration-defaultoroptions-options-%e2%87%92-codedurationcode)
+      - [@jessling/duration~durationOptions : <code>Object</code>](#jesslingdurationdurationoptions--codeobjectcode)
+  - [Related](#related)
+  - [Contribution](#contribution)
+  - [License](#license)
 
 <a name="module_@jessling/duration..duration"></a>
 
@@ -207,6 +215,12 @@ Additional options to change the default behavior.
 
 <!--- api %> --->
 
+## Related
+
+Check out the [official website][url-website] for more.
+
+Find more **@jessling** packages on [NPM][url-npm] and on [GitHub][url-github].
+
 ## Contribution
 
 **Any contribution is ***highly*** appreciated**. To get going, check out the [**contribution guidelines**][url-contrib-doc].
@@ -224,3 +238,6 @@ Additional options to change the default behavior.
   <!--- URLs --->
   [url-license-doc]: https://github.com/jessling/duration/blob/master/LICENSE.md
   [url-contrib-doc]: https://github.com/jessling/duration/blob/master/.github/CONTRIBUTING.md
+  [url-npm]:         https://www.npmjs.com/search?q=keywords:@jessling
+  [url-github]:      https://github.com/jessling
+  [url-website]:     https://jessling.github.io

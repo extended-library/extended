@@ -55,7 +55,8 @@
     "iife",
     "commonjs",
     "browser",
-    "jessling"
+    "jessling",
+    "@jessling"
   ],
   "engines": {
     "node": ">=8.0.0"
