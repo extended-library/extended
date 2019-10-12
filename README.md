@@ -100,32 +100,32 @@
 
 **@jessling/duration** can be used in **Node.js**, in the **Browser**, and ***in every*** current module format, system, environment, and variety including **CommonJS**, **ESM**, **UMD**, **AMD**, **SystemJS** and [***more***][url-cdn].
 
-  - **CommonJS:**
-  
-    ```javascript
-    const duration = require('@jessling/duration')
-    ```
+- **CommonJS:**
 
-  - **ES Module:**
+  ```javascript
+  const duration = require('@jessling/duration')
+  ```
 
-    ```javascript
-    import duration from '@jessling/duration'
-    ```
-  
-  - **In Browser**:
+- **ES Module:**
 
-    ```html
-    <script src="https://cdn.jsdelivr.net/npm/@jessling/duration/dist/duration.umd.min.js"></script>    
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        console.log(duration('42 sec')) // === 42000
-      })
-    </script>
-    ```
+  ```javascript
+  import duration from '@jessling/duration'
+  ```
 
-  - **AMD, SystemJS, IIFE, and Others:**
+- **In Browser**:
 
-    Check out the [**additional variations and SRI hashes on jsDelivr CDN**][url-cdn].
+  ```html
+  <script src="https://cdn.jsdelivr.net/npm/@jessling/duration/dist/duration.umd.min.js"></script>    
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log(duration('42 sec')) // === 42000
+    })
+  </script>
+  ```
+
+- **AMD, SystemJS, IIFE, and Others:**
+
+  Check out the [**additional variations and SRI hashes on jsDelivr CDN**][url-cdn].
 
 ### :satisfied: Usage - General
 
