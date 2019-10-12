@@ -40,7 +40,7 @@
 
 ---
 
-## :confused: Why?
+## :thinking:	Why?
 
 - **1.:** It's **more intuitive** for everyday use, when dealing with durations :heart::
 
