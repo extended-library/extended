@@ -96,7 +96,7 @@
     $ yarn add @jessling/duration
     ```
 
-## :sunglasses: Usage
+## :coffee: Usage
 
 **@jessling/duration** can be used in **Node.js**, in the **Browser**, and ***in every*** current module format, system, environment, and variety including **CommonJS**, **ESM**, **UMD**, **AMD**, **SystemJS** and [***more***][url-cdn].
 
