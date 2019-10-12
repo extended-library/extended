@@ -72,7 +72,7 @@
   User.update(
     { logged_out_warn_time: Date.now() + duration('280 days'), },
     { where: { id } }
-  );
+  )
   ```
 
 - **3.:** It's **highly configurable** and the inputs are **cached** :godmode::
