@@ -44,21 +44,7 @@
 
 - **1.:** It's **more intuitive** for everyday use, when dealing with durations :heart::
 
-  ```javascript  
-  // will log out "It is time!" in ~60,000 milliseconds
-  setTimeout(() => console.log('It is time!'), duration('1 min'))
-
-  // 15552000000 milliseconds from now
-  const date = new Date(Date.now() + duration('180 days'))
-  document.cookie = 'value=42;expires=' + date.toUTCString() + ';path=/')
-
-  // delays the execution for ~15,000 milliseconds
-  await delay(duration('15 seconds'))
-  ```
-
-- **2.:** It's easier, when **handling larger or more complex durations** :muscle::
-  
-  ```javascript
+  ```javascript    
   // general job cycle
   const cycle = duration('36 hours') // === 129600000 in milliseconds
 
@@ -67,6 +53,23 @@
 
   // custom notification set by a user
   const notifyIn = duration('24 hours 36 minutes 49 seconds') // === 88609000
+
+  // delays the execution for ~15,000 milliseconds
+  await delay(duration('15 seconds'))
+  ```
+
+- **2.:** It's easier, when **handling larger or more complex durations** :muscle::
+  
+  ```javascript
+  // will log out "It is time!" in ~60,000 milliseconds
+  setTimeout(() => console.log('It is time!'), duration('1 min'))
+
+  // will log out "It is time again!" in every ~12,500 milliseconds
+  setInterval(() => console.log('It is time again!'), duration('12.5 sec'))
+
+  // 15552000000 milliseconds from now
+  const date = new Date(Date.now() + duration('180 days'))
+  document.cookie = 'value=42;expires=' + date.toUTCString() + ';path=/')  
   ```
 
 - **3.:** It's **highly configurable** and the inputs are **cached** :godmode::
