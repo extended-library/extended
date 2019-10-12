@@ -71,7 +71,7 @@
   // 24192000000 milliseconds from now
   User.update(
     { logged_out_warn_time: Date.now() + duration('280 days'), },
-    { where: {id: id} }
+    { where: { id } }
   );
   ```
 
