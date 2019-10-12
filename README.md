@@ -82,19 +82,19 @@
   custom('1 hour') // === 3600 in seconds
   ```
 
-## :floppy_disk: Installation
+## :package: Installation
 
-  - **NPM:**
+- **NPM:**
 
-    ```bash
-    $ npm install @jessling/duration --save
-    ```
+  ```bash
+  npm install @jessling/duration --save
+  ```
 
-  - **Yarn:**
+- **Yarn:**
 
-    ```bash
-    $ yarn add @jessling/duration
-    ```
+  ```bash
+  yarn add @jessling/duration
+  ```
 
 ## :coffee: Usage
 
