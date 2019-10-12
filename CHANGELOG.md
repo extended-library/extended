@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/jessling/duration/compare/v1.0.4...v1.1.0) (2019-10-11)
+
+
+### Features
+
+* **media:** add rule to .npmignore ([961cb4e](https://github.com/jessling/duration/commit/961cb4e0c301108fe242ec82be1eb05a321fd45b))
+
 ## [1.0.4](https://github.com/jessling/duration/compare/v1.0.3...v1.0.4) (2019-10-11)
 
 
