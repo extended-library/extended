@@ -1,5 +1,5 @@
 {
-  "name": "@jessling/duration",
+  "name": "@jstandards/duration",
   "version": "0.0.0-development",
   "description": "Human-readable, convenient, friendly durations. Converts durations given as strings to milliseconds or to custom units from milliseconds to weeks.",
   "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
@@ -11,13 +11,13 @@
     "doc": "doc",
     "test": "test"
   },
-  "homepage": "https://github.com/jessling/duration#readme",
+  "homepage": "https://github.com/js-jstandards/duration#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jessling/duration.git"
+    "url": "https://github.com/js-jstandards/duration.git"
   },
   "bugs": {
-    "url": "https://github.com/jessling/duration/issues"
+    "url": "https://github.com/js-jstandards/duration/issues"
   },
   "keywords": [
     "duration",
@@ -55,8 +55,8 @@
     "iife",
     "commonjs",
     "browser",
-    "jessling",
-    "@jessling"
+    "jstandards",
+    "@jstandards"
   ],
   "engines": {
     "node": ">=8.0.0"
@@ -78,30 +78,30 @@
     "test": "jest --config=.jestrc.json"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "@richrdkng/dmd-plugin-simple-nodejs-project": "1.0.0",
-    "@semantic-release/changelog": "^3.0.4",
-    "@semantic-release/exec": "^3.3.7",
-    "@semantic-release/git": "^7.0.16",
-    "acorn": "^7.1.0",
-    "babel-jest": "^24.9.0",
-    "codecov": "^3.6.1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "acorn": "^7.1.1",
+    "babel-jest": "^25.4.0",
+    "codecov": "^3.6.5",
     "gulp": "^4.0.2",
     "gulp-debug": "^4.0.0",
-    "gulp-rename": "^1.4.0",
+    "gulp-rename": "^2.0.0",
     "gulp-tap": "^2.0.0",
-    "jest": "^24.9.0",
-    "jsdoc-to-markdown": "^5.0.1",
-    "mocha": "^6.2.1",
+    "jest": "^25.4.0",
+    "jsdoc-to-markdown": "^5.0.3",
+    "mocha": "^7.1.2",
     "npm-run-all": "^4.1.5",
     "pkg-dir": "^4.2.0",
-    "rollup": "^1.22.0",
+    "rollup": "^2.7.2",
     "rollup-plugin-banner": "^0.2.1",
-    "rollup-plugin-license": "^0.12.1",
-    "rollup-plugin-terser": "^5.1.2",
-    "semantic-release": "^15.13.24",
+    "rollup-plugin-license": "^2.0.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "semantic-release": "^17.0.7",
     "snazzy": "^8.0.0",
-    "standard": "^14.3.1"
+    "standard": "^14.3.3"
   }
 }
