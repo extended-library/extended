@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/js-standards/duration/compare/v1.1.0...v1.1.1) (2020-04-28)
+
+
+### Bug Fixes
+
+* remove unneeded dev deps ([b251dce](https://github.com/js-standards/duration/commit/b251dcea013df5f2878b86a113c1e50a4216d55b))
+
 # [1.1.0](https://github.com/jessling/duration/compare/v1.0.4...v1.1.0) (2019-10-11)
 
 
