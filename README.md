@@ -231,10 +231,10 @@ custom('2 hours') // === 7200
 
 ## :computer: API
 
-<!--- <% api --->
+<!--- <% API --->
 <a name="module_@standards/duration"></a>
 
-### @standards/duration
+## @standards/duration
 
 * [@standards/duration](#module_@standards/duration)
     * [~duration([duration], [defaultOrOptions], [options])](#module_@standards/duration..duration) ⇒ <code>number</code>
@@ -243,7 +243,7 @@ custom('2 hours') // === 7200
 
 <a name="module_@standards/duration..duration"></a>
 
-#### @standards/duration~duration([duration], [defaultOrOptions], [options]) ⇒ <code>number</code>
+### @standards/duration~duration([duration], [defaultOrOptions], [options]) ⇒ <code>number</code>
 Converts different types of string durations to milliseconds, seconds, minutes, and more as numbers.
 
 **Returns**: <code>number</code> - The duration in number.
@@ -355,7 +355,7 @@ duration('42 sec') // === 42000
 ```
 <a name="module_@standards/duration..createCustom"></a>
 
-#### @standards/duration~createCustom([duration], [defaultOrOptions], [options]) ⇒ <code>duration</code>
+### @standards/duration~createCustom([duration], [defaultOrOptions], [options]) ⇒ <code>duration</code>
 Creates a customized duration function with the given arguments.
 
 **Returns**: <code>duration</code> - The customized duration function.  
@@ -405,7 +405,7 @@ custom('2 hours') // === 7200
 ```
 <a name="module_@standards/duration..durationOptions"></a>
 
-#### @standards/duration~durationOptions : <code>Object</code>
+### @standards/duration~durationOptions : <code>Object</code>
 Additional options to change the default behavior.
 
 **Properties**
@@ -436,7 +436,7 @@ duration('42 sec', { unit: 'sec', round: false })
 // with fallback
 duration('42 sec', '1 sec', { unit: 'sec', round: false })
 ```
-<!--- api %> --->
+<!--- API %> --->
 
 ---
 
