@@ -9,7 +9,7 @@
 <!-- Badges - 1st row -->
 <p align="center">
   <!-- NPM badge -->
-  <a href="https://www.npmjs.com/package/@js-standards/duration"><img src="https://img.shields.io/npm/v/@js-standards/duration?color=brightgreen&style=flat-square" alt="release-badge"></a>
+  <a href="https://www.npmjs.com/package/@standards/duration"><img src="https://img.shields.io/npm/v/@js-standards/duration?color=brightgreen&style=flat-square" alt="release-badge"></a>
   <!-- CI badge -->
   <a href="https://github.com/js-standards/duration/actions?query=workflow%3Aci"><img src="https://github.com/js-standards/duration/workflows/ci/badge.svg?style=flat-square" alt="ci-badge"></a>
   <!-- Coverage badge -->
@@ -17,7 +17,7 @@
   <!-- Dependency badge -->
   <a href="https://libraries.io/github/js-standards/duration"><img src="https://img.shields.io/badge/dependabot-enabled-brightgreen.svg?style=flat-square" alt="dependency-badge"></a>
   <!-- Documentation badge -->
-  <a href="https://github.com/js-standards/duration/blob/master/doc/API.md"><img src="https://inch-ci.org/github/js-standards/duration.svg?branch=master&style=flat-square" alt="documentation-badge"></a>
+  <a href="https://github.com/js-standards/duration/blob/master/docs/API.md"><img src="https://inch-ci.org/github/js-standards/duration.svg?branch=master&style=flat-square" alt="documentation-badge"></a>
 </p>
 
 <!-- Badges - 2nd row -->
