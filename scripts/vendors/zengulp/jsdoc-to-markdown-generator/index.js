@@ -1,9 +1,11 @@
 'use strict'
 
+const fs = require('fs')
+const path = require('path')
 const tap = require('gulp-tap')
 const jsdoc2md = require('jsdoc-to-markdown')
 
-module.exports = (options) => tap(async file => {
+function generate (options, source) {
   let plugin = []
 
   if (typeof options === 'string') {
@@ -22,8 +24,8 @@ module.exports = (options) => tap(async file => {
     headingDepth = options.headingDepth
   }
 
-  const output = jsdoc2md.renderSync({
-    source: file.contents.toString(),
+  return jsdoc2md.renderSync({
+    source,
     plugin,
     'heading-depth': headingDepth,
     // https://github.com/jsdoc2md/jsdoc-to-markdown/issues/110
@@ -31,7 +33,18 @@ module.exports = (options) => tap(async file => {
     // https://github.com/jsdoc2md/jsdoc-to-markdown/blob/master/docs/API.md#jsdoc2mdgetjsdocdataoptions--promise
     'no-cache': true
   })
+}
 
-  file.basename = 'API.md'
-  file.contents = Buffer.from(output)
-})
+function pipe (options) {
+  return tap(async file => {
+    file.basename = options.rename || 'doc.md'
+    file.contents = Buffer.from(generate(options, file.contents.toString()))
+  })
+}
+
+pipe.fromFile = (filePath, options) => {
+  const content = fs.readFileSync(path.normalize(filePath), 'utf-8')
+  return generate(options, content)
+}
+
+module.exports = pipe

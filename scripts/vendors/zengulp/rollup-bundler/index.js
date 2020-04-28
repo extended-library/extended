@@ -1,5 +1,7 @@
 'use strict'
 
+const { task, parallel } = require('gulp')
+
 const path = require('path')
 const assert = require('assert')
 const rollup = require('rollup')
@@ -7,15 +9,9 @@ const license = require('rollup-plugin-license')
 const terser = require('rollup-plugin-terser')
 const pkgDir = require('pkg-dir')
 
-module.exports = (gulp, options) => {
+module.exports = (taskName, options) => {
   assert(options, 'The variable "options" must be an object!')
-  assert(options.task, '"options.task" must be non-empty string!')
 
-  const task = options.task
-
-  assert(options.name, '"options.name" must be non-empty string!')
-
-  const name = options.name
   const cwd = options.cwd || pkgDir.sync()
 
   assert(options.input, '"options.input" must be an object!')
@@ -49,8 +45,10 @@ module.exports = (gulp, options) => {
     }
   }
 
+  const name = options.name
+
   // CommonJS ---------------------------------------------------------------------------------------------------------*
-  gulp.task(`${task}:cjs`, async () => {
+  task(`${taskName}:cjs`, async () => {
     const bundle = await rollup.rollup({
       input: input.cjs,
       plugins: [
@@ -60,13 +58,13 @@ module.exports = (gulp, options) => {
 
     await bundle.write({
       name,
-      file: path.join(dist, `/${name}.cjs.js`),
+      file: path.join(dist, 'index.cjs.js'),
       format: 'cjs'
     })
   })
 
   // ES Modules -------------------------------------------------------------------------------------------------------*
-  gulp.task(`${task}:esm`, async () => {
+  task(`${taskName}:esm`, async () => {
     const bundle = await rollup.rollup({
       input: input.esm,
       plugins: [
@@ -76,13 +74,13 @@ module.exports = (gulp, options) => {
 
     await bundle.write({
       name,
-      file: path.join(dist, `/${name}.esm.js`),
+      file: path.join(dist, 'index.esm.js'),
       format: 'esm'
     })
   })
 
   // UMD --------------------------------------------------------------------------------------------------------------*
-  gulp.task(`${task}:umd`, async () => {
+  task(`${taskName}:umd`, async () => {
     const bundle = await rollup.rollup({
       input: input.umd,
       plugins: [
@@ -92,12 +90,12 @@ module.exports = (gulp, options) => {
 
     await bundle.write({
       name,
-      file: path.join(dist, `/${name}.umd.js`),
+      file: path.join(dist, 'index.umd.js'),
       format: 'umd'
     })
   })
 
-  gulp.task(`${task}:umd-min`, async () => {
+  task(`${taskName}:umd-min`, async () => {
     const bundle = await rollup.rollup({
       input: input.umd,
       plugins: [
@@ -108,14 +106,14 @@ module.exports = (gulp, options) => {
 
     await bundle.write({
       name,
-      file: path.join(dist, `/${name}.umd.min.js`),
+      file: path.join(dist, 'index.umd.min.js'),
       format: 'umd',
       sourcemap: true
     })
   })
 
   // AMD --------------------------------------------------------------------------------------------------------------*
-  gulp.task(`${task}:amd`, async () => {
+  task(`${taskName}:amd`, async () => {
     const bundle = await rollup.rollup({
       input: input.amd,
       plugins: [
@@ -125,12 +123,12 @@ module.exports = (gulp, options) => {
 
     await bundle.write({
       name,
-      file: path.join(dist, `/${name}.amd.js`),
+      file: path.join(dist, 'index.amd.js'),
       format: 'amd'
     })
   })
 
-  gulp.task(`${task}:amd-min`, async () => {
+  task(`${taskName}:amd-min`, async () => {
     const bundle = await rollup.rollup({
       input: input.amd,
       plugins: [
@@ -141,14 +139,14 @@ module.exports = (gulp, options) => {
 
     await bundle.write({
       name,
-      file: path.join(dist, `/${name}.amd.min.js`),
+      file: path.join(dist, 'index.amd.min.js'),
       format: 'amd',
       sourcemap: true
     })
   })
 
   // IIFE -------------------------------------------------------------------------------------------------------------*
-  gulp.task(`${task}:iife`, async () => {
+  task(`${taskName}:iife`, async () => {
     const bundle = await rollup.rollup({
       input: input.iife,
       plugins: [
@@ -158,12 +156,12 @@ module.exports = (gulp, options) => {
 
     await bundle.write({
       name,
-      file: path.join(dist, `/${name}.iife.js`),
+      file: path.join(dist, 'index.iife.js'),
       format: 'iife'
     })
   })
 
-  gulp.task(`${task}:iife-min`, async () => {
+  task(`${taskName}:iife-min`, async () => {
     const bundle = await rollup.rollup({
       input: input.iife,
       plugins: [
@@ -174,14 +172,14 @@ module.exports = (gulp, options) => {
 
     await bundle.write({
       name,
-      file: path.join(dist, `/${name}.iife.min.js`),
+      file: path.join(dist, 'index.iife.min.js'),
       format: 'iife',
       sourcemap: true
     })
   })
 
   // SystemJS ---------------------------------------------------------------------------------------------------------*
-  gulp.task(`${task}:system`, async () => {
+  task(`${taskName}:system`, async () => {
     const bundle = await rollup.rollup({
       input: input.system,
       plugins: [
@@ -191,12 +189,12 @@ module.exports = (gulp, options) => {
 
     await bundle.write({
       name,
-      file: path.join(dist, `/${name}.system.js`),
+      file: path.join(dist, 'index.system.js'),
       format: 'system'
     })
   })
 
-  gulp.task(`${task}:system-min`, async () => {
+  task(`${taskName}:system-min`, async () => {
     const bundle = await rollup.rollup({
       input: input.system,
       plugins: [
@@ -207,26 +205,26 @@ module.exports = (gulp, options) => {
 
     await bundle.write({
       name,
-      file: path.join(dist, `/${name}.system.min.js`),
+      file: path.join(dist, 'index.system.min.js'),
       format: 'system',
       sourcemap: true
     })
   })
 
   // ------------------------------------------------------------------------------------------------------------------*
-  return {
-    name: task,
-    tasks: [
-      `${task}:cjs`,
-      `${task}:esm`,
-      `${task}:umd`,
-      `${task}:umd-min`,
-      `${task}:amd`,
-      `${task}:amd-min`,
-      `${task}:iife`,
-      `${task}:iife-min`,
-      `${task}:system`,
-      `${task}:system-min`
-    ]
-  }
+  return [
+    taskName,
+    parallel(
+      `${taskName}:cjs`,
+      `${taskName}:esm`,
+      `${taskName}:umd`,
+      `${taskName}:umd-min`,
+      `${taskName}:amd`,
+      `${taskName}:amd-min`,
+      `${taskName}:iife`,
+      `${taskName}:iife-min`,
+      `${taskName}:system`,
+      `${taskName}:system-min`
+    )
+  ]
 }
