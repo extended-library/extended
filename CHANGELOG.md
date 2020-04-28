@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/js-standards/duration/compare/v1.1.1...v1.1.2) (2020-04-28)
+
+
+### Bug Fixes
+
+* **docs:** fix README links ([759ff28](https://github.com/js-standards/duration/commit/759ff28022665b2fbf2ddcab8ab0dfac8fd91565))
+
 ## [1.1.1](https://github.com/js-standards/duration/compare/v1.1.0...v1.1.1) (2020-04-28)
 
 
