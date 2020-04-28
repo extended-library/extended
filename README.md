@@ -9,7 +9,7 @@
 <!-- Badges - 1st row -->
 <p align="center">
   <!-- NPM badge -->
-  <a href="https://www.npmjs.com/package/@standards/duration"><img src="https://img.shields.io/npm/v/@js-standards/duration?color=brightgreen&style=flat-square" alt="release-badge"></a>
+  <a href="https://www.npmjs.com/package/@standards/duration"><img src="https://img.shields.io/npm/v/@standards/duration?color=brightgreen&style=flat-square" alt="release-badge"></a>
   <!-- CI badge -->
   <a href="https://github.com/js-standards/duration/actions?query=workflow%3Aci"><img src="https://github.com/js-standards/duration/workflows/ci/badge.svg?style=flat-square" alt="ci-badge"></a>
   <!-- Coverage badge -->
