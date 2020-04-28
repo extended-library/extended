@@ -136,7 +136,7 @@ Procfile    text
 *.png  binary
 *.psb  binary
 *.psd  binary
-*.svg  text
+*.svg  binary
 *.svgz binary
 *.tif  binary
 *.tiff binary
