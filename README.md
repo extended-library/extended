@@ -1,17 +1,23 @@
-# @jessling/duration
+<!-- Logo -->
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/js-standards/duration/assets/icontype.svg" alt="@standards/duration" />
+</p>
+
+<!-- Branded divider -->
+<a href="https://github.com/js-standards"><img src="https://cdn.jsdelivr.net/npm/@standards/assets@1.0.2/brand/media/github/divider.svg" alt="divider" /></a>
 
 <!-- Badges - 1st row -->
 <p align="center">
   <!-- NPM badge -->
-  <a href="https://www.npmjs.com/package/@jessling/duration"><img src="https://img.shields.io/npm/v/@jessling/duration?color=brightgreen&style=flat-square" alt="release-badge"></a>
+  <a href="https://www.npmjs.com/package/@js-standards/duration"><img src="https://img.shields.io/npm/v/@js-standards/duration?color=brightgreen&style=flat-square" alt="release-badge"></a>
   <!-- CI badge -->
-  <a href="https://travis-ci.org/jessling/duration"><img src="https://img.shields.io/travis/jessling/duration.svg?style=flat-square" alt="ci-badge"></a>
+  <a href="https://github.com/js-standards/duration/actions?query=workflow%3Aci"><img src="https://github.com/js-standards/duration/workflows/ci/badge.svg?style=flat-square" alt="ci-badge"></a>
   <!-- Coverage badge -->
-  <a href="https://codecov.io/gh/jessling/duration"><img src="https://img.shields.io/codecov/c/github/jessling/duration?style=flat-square" alt="coverage-badge"></a>
+  <a href="https://codecov.io/gh/js-standards/duration"><img src="https://img.shields.io/codecov/c/github/js-standards/duration?style=flat-square" alt="coverage-badge"></a>
   <!-- Dependency badge -->
-  <a href="https://greenkeeper.io"><img src="https://badges.greenkeeper.io/jessling/duration.svg?style=flat-square" alt="dependency-badge"></a>
+  <a href="https://libraries.io/github/js-standards/duration"><img src="https://img.shields.io/badge/dependabot-enabled-brightgreen.svg?style=flat-square" alt="dependency-badge"></a>
   <!-- Documentation badge -->
-  <a href="https://github.com/jessling/duration/blob/master/doc/API.md"><img src="https://inch-ci.org/github/jessling/duration.svg?branch=master&style=flat-square" alt="documentation-badge"></a>
+  <a href="https://github.com/js-standards/duration/blob/master/doc/API.md"><img src="https://inch-ci.org/github/js-standards/duration.svg?branch=master&style=flat-square" alt="documentation-badge"></a>
 </p>
 
 <!-- Badges - 2nd row -->
@@ -23,9 +29,9 @@
   <!-- Release workflow badge -->
   <a href="https://semantic-release.gitbook.io/semantic-release"><img src="https://img.shields.io/badge/release-semantic--release-e10079.svg?style=flat-square" alt="release-workflow-badge"></a>
   <!-- License badge -->
-  <a href="https://github.com/jessling/duration/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square" alt="license-badge"></a>
+  <a href="https://github.com/js-standards/duration/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square" alt="license-badge"></a>
   <!-- Contribution badge -->
-  <a href="https://github.com/jessling/duration/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="contribution-badge"></a>
+  <a href="https://github.com/js-standards/duration/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="contribution-badge"></a>
 </p>
 
 ---
@@ -93,35 +99,35 @@
 - **NPM:**
 
   ```bash
-  npm install @jessling/duration --save
+  npm install @standards/duration --save
   ```
 
 - **Yarn:**
 
   ```bash
-  yarn add @jessling/duration
+  yarn add @standards/duration
   ```
 
 ## :coffee: Usage
 
-**@jessling/duration** can be used in **Node.js**, in the **Browser**, and ***in every*** current module format, system, environment, and variety including **CommonJS**, **ESM**, **UMD**, **AMD**, **SystemJS** and [***more***][url-cdn].
+**@standards/duration** can be used in **Node.js**, in the **Browser**, and ***in every*** current module format, system, environment, and variety including **CommonJS**, **ESM**, **UMD**, **AMD**, **SystemJS** and [***more***][url-cdn].
 
 - **CommonJS:**
 
   ```javascript
-  const duration = require('@jessling/duration')
+  const duration = require('@standards/duration')
   ```
 
 - **ES Module:**
 
   ```javascript
-  import duration from '@jessling/duration'
+  import duration from '@standards/duration'
   ```
 
 - **In Browser**:
 
   ```html
-  <script src="https://cdn.jsdelivr.net/npm/@jessling/duration/dist/duration.umd.min.js"></script>    
+  <script src="https://cdn.jsdelivr.net/npm/@standards/duration/dist/duration.umd.min.js"></script>    
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       console.log(duration('42 sec')) // === 42000
@@ -197,7 +203,7 @@ duration('3w 5days 12 h', { unit: 'h' }) // === 636
 
 ```javascript
 // ---------- in CommonJS --------------------
-const duration = require('@jessling/duration')
+const duration = require('@standards/duration')
 
 // custom duration function
 // with 1 hour as a fallback, return unit is in seconds
@@ -206,7 +212,7 @@ const custom = duration.createCustom(null, '1 hour', { unit: 'sec' })
 
 ```javascript
 // ---------- in ES Module ----------------------
-import { createCustom } from '@jessling/duration'
+import { createCustom } from '@standards/duration'
 
 // custom duration function
 // with 1 hour as a fallback, return unit is in seconds
@@ -226,18 +232,18 @@ custom('2 hours') // === 7200
 ## :computer: API
 
 <!--- <% api --->
-<a name="module_@jessling/duration"></a>
+<a name="module_@standards/duration"></a>
 
-### @jessling/duration
+### @standards/duration
 
-* [@jessling/duration](#module_@jessling/duration)
-    * [~duration([duration], [defaultOrOptions], [options])](#module_@jessling/duration..duration) ⇒ <code>number</code>
-    * [~createCustom([duration], [defaultOrOptions], [options])](#module_@jessling/duration..createCustom) ⇒ <code>duration</code>
-    * [~durationOptions](#module_@jessling/duration..durationOptions) : <code>Object</code>
+* [@standards/duration](#module_@standards/duration)
+    * [~duration([duration], [defaultOrOptions], [options])](#module_@standards/duration..duration) ⇒ <code>number</code>
+    * [~createCustom([duration], [defaultOrOptions], [options])](#module_@standards/duration..createCustom) ⇒ <code>duration</code>
+    * [~durationOptions](#module_@standards/duration..durationOptions) : <code>Object</code>
 
-<a name="module_@jessling/duration..duration"></a>
+<a name="module_@standards/duration..duration"></a>
 
-#### @jessling/duration~duration([duration], [defaultOrOptions], [options]) ⇒ <code>number</code>
+#### @standards/duration~duration([duration], [defaultOrOptions], [options]) ⇒ <code>number</code>
 Converts different types of string durations to milliseconds, seconds, minutes, and more as numbers.
 
 **Returns**: <code>number</code> - The duration in number.
@@ -337,23 +343,23 @@ duration('3w 5days 12 h', { unit: 'h' }) // === 636
 ```
 **Example** *(CommonJS Require)*  
 ```js
-const duration = require('@jessling/duration')
+const duration = require('@standards/duration')
 
 duration('42 sec') // === 42000
 ```
 **Example** *(ES Module Import)*  
 ```js
-import duration from '@jessling/duration'
+import duration from '@standards/duration'
 
 duration('42 sec') // === 42000
 ```
-<a name="module_@jessling/duration..createCustom"></a>
+<a name="module_@standards/duration..createCustom"></a>
 
-#### @jessling/duration~createCustom([duration], [defaultOrOptions], [options]) ⇒ <code>duration</code>
+#### @standards/duration~createCustom([duration], [defaultOrOptions], [options]) ⇒ <code>duration</code>
 Creates a customized duration function with the given arguments.
 
 **Returns**: <code>duration</code> - The customized duration function.  
-**See**: [@jessling/duration~duration](@jessling/duration~duration)  
+**See**: [@standards/duration~duration](@standards/duration~duration)  
 <table>
   <thead>
     <tr>
@@ -375,7 +381,7 @@ Creates a customized duration function with the given arguments.
 
 **Example** *(CommonJS)*  
 ```js
-const duration = require('@jessling/duration')
+const duration = require('@standards/duration')
 
 // custom duration function
 // with 1 hour as a fallback, return unit is in seconds
@@ -383,7 +389,7 @@ const custom = duration.createCustom(null, '1 hour', { unit: 'sec' })
 ```
 **Example** *(ES Module)*  
 ```js
-import { createCustom } from '@jessling/duration'
+import { createCustom } from '@standards/duration'
 
 // custom duration function
 // with 1 hour as a fallback, return unit is in seconds
@@ -397,9 +403,9 @@ custom() // === 3600
 // will return 2 hours in seconds, since the return unit is "sec"
 custom('2 hours') // === 7200
 ```
-<a name="module_@jessling/duration..durationOptions"></a>
+<a name="module_@standards/duration..durationOptions"></a>
 
-#### @jessling/duration~durationOptions : <code>Object</code>
+#### @standards/duration~durationOptions : <code>Object</code>
 Additional options to change the default behavior.
 
 **Properties**
@@ -436,9 +442,9 @@ duration('42 sec', '1 sec', { unit: 'sec', round: false })
 
 ## :star: Related
 
-Check out the [official website][url-website] for more tools, utilities, and packages and follow on [Twitter][url-twitter].
+Check out the [official website][url-website] for more tools, utilities, and packages.
 
-Find more **@jessling** packages on [NPM][url-npm] and [GitHub][url-github].
+Find more **@standards** packages on [NPM][url-npm] and [GitHub][url-github].
 
 ## :beers: Contribution
 
@@ -452,13 +458,11 @@ Find more **@jessling** packages on [NPM][url-npm] and [GitHub][url-github].
 
   <!--- References ======================================================== --->
 
-  <!--- Badges -->
-  
   <!--- URLs --->
-  [url-license-doc]: https://github.com/jessling/duration/blob/master/LICENSE.md
-  [url-contrib-doc]: https://github.com/jessling/duration/blob/master/.github/CONTRIBUTING.md
-  [url-cdn]:         https://www.jsdelivr.com/package/npm/@jessling/duration?path=dist
-  [url-npm]:         https://www.npmjs.com/search?q=keywords:@jessling
-  [url-github]:      https://github.com/jessling
-  [url-website]:     https://jessling.github.io
-  [url-twitter]:     https://twitter.com/_jessling
+  [url-license-doc]: https://github.com/js-standards/duration/blob/master/LICENSE.md
+  [url-contrib-doc]: https://github.com/js-standards/duration/blob/master/.github/CONTRIBUTING.md
+  [url-cdn]:         https://www.jsdelivr.com/package/npm/@standards/duration?path=dist
+  [url-npm]:         https://www.npmjs.com/search?q=keywords:@standards
+  [url-github]:      https://github.com/js-standards
+  [url-website]:     https://js-standards.github.io
+  [url-twitter]:     https://twitter.com/_standards

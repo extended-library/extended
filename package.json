@@ -1,5 +1,5 @@
 {
-  "name": "@jstandards/duration",
+  "name": "@standards/duration",
   "version": "0.0.0-development",
   "description": "Human-readable, convenient, friendly durations. Converts durations given as strings to milliseconds or to custom units from milliseconds to weeks.",
   "author": "Richard King <richrdkng@gmail.com> (www.richrdkng.com)",
@@ -11,13 +11,13 @@
     "doc": "doc",
     "test": "test"
   },
-  "homepage": "https://github.com/js-jstandards/duration#readme",
+  "homepage": "https://github.com/js-standards/duration#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/js-jstandards/duration.git"
+    "url": "https://github.com/js-standards/duration.git"
   },
   "bugs": {
-    "url": "https://github.com/js-jstandards/duration/issues"
+    "url": "https://github.com/js-standards/duration/issues"
   },
   "keywords": [
     "duration",
@@ -55,8 +55,8 @@
     "iife",
     "commonjs",
     "browser",
-    "jstandards",
-    "@jstandards"
+    "standards",
+    "@standards"
   ],
   "engines": {
     "node": ">=8.0.0"

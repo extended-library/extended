@@ -1,5 +1,5 @@
 /**
- * @module @jessling/duration
+ * @module @standards/duration
  */
 
 /**
@@ -233,12 +233,12 @@ function _isValid (object) {
  * duration('3w 5days 12 h', { unit: 'h' }) // === 636
  *
  * @example <caption>CommonJS Require</caption>
- * const duration = require('@jessling/duration')
+ * const duration = require('@standards/duration')
  *
  * duration('42 sec') // === 42000
  *
  * @example <caption>ES Module Import</caption>
- * import duration from '@jessling/duration'
+ * import duration from '@standards/duration'
  *
  * duration('42 sec') // === 42000
  *
@@ -327,7 +327,7 @@ function duration (duration, defaultOrOptions, options) {
 /**
  * Creates a customized duration function with the given arguments.
  *
- * @see {@link @jessling/duration~duration}
+ * @see {@link @standards/duration~duration}
  * @function createCustom
  *
  * @param {string|number|*} [duration] - The duration(s) to parse.
@@ -335,14 +335,14 @@ function duration (duration, defaultOrOptions, options) {
  * @param {durationOptions} [options] - Additional options to change the default behavior.
  *
  * @example <caption>CommonJS</caption>
- * const duration = require('@jessling/duration')
+ * const duration = require('@standards/duration')
  *
  * // custom duration function
  * // with 1 hour as a fallback, return unit is in seconds
  * const custom = duration.createCustom(null, '1 hour', { unit: 'sec' })
  *
  * @example <caption>ES Module</caption>
- * import { createCustom } from '@jessling/duration'
+ * import { createCustom } from '@standards/duration'
  *
  * // custom duration function
  * // with 1 hour as a fallback, return unit is in seconds
