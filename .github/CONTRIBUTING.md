@@ -173,8 +173,7 @@ Check out **in detail** the:
    - Follow and adhere to [**StandardJS**][url-code] coding style and make sure the **tests run without errors** by running:
 
      ```bash
-     npm run lint
-     npm test
+     npm run lint && npm test
      ```
 
    - Use Git's [**interactive rebase**][url-rebase] feature to tidy up your commits **before making them public**:
