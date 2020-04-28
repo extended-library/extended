@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/js-standards/duration/compare/v1.1.2...v1.1.3) (2020-04-28)
+
+
+### Bug Fixes
+
+* **docs:** fix NPM badge link ([9aa7eae](https://github.com/js-standards/duration/commit/9aa7eae870d6d2de3cc71339e9f2c8cf3331d0da))
+
 ## [1.1.2](https://github.com/js-standards/duration/compare/v1.1.1...v1.1.2) (2020-04-28)
 
 
