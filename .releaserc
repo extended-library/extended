@@ -4,27 +4,20 @@
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "@semantic-release/github",
-    [
-      "@semantic-release/exec",
-      {
+    ["@semantic-release/exec", {
         "prepareCmd": "export SEMANTIC_RELEASE_NEXT_RELEASE_VERSION=\"${nextRelease.version}\" && npm run build"
-      }
-    ],
-    [
-      "@semantic-release/git",
-      {
-        "assets": [
-          "doc/**/*.*",
-          "docs/**/*.*",
-          "CHANGELOG.md",
-          "npm-shrinkwrap.json",
-          "package.json",
-          "package-lock.json",
-          "LICENSE.md",
-          "README.md"
-        ]
-      }
-    ],
-    "@semantic-release/npm"
+    }],
+    ["@semantic-release/git", {
+      "assets": [
+        "doc*/**/*.*",
+        "CHANGELOG*",
+        "LICENSE*",
+        "README*",
+        "package*.json"
+      ]
+    }],
+    ["@semantic-release/npm", {
+      "pkgRoot": "dist"
+    }]
   ]
 }
