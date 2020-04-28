@@ -99,7 +99,7 @@
 - **NPM:**
 
   ```bash
-  npm install @standards/duration --save
+  npm install @standards/duration
   ```
 
 - **Yarn:**
