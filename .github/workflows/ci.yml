@@ -24,9 +24,7 @@ jobs:
       fail-fast: false
       matrix:
         package: [
-          '@extended/async',
-          '@extended/time',
-          '@extended/values'
+          '@extended/time'
         ]
 
     steps:
@@ -88,9 +86,7 @@ jobs:
       fail-fast: false
       matrix:
         package: [
-          '@extended/async',
-          '@extended/time',
-          '@extended/values'
+          '@extended/time'
         ]
 
     steps:
@@ -152,17 +148,9 @@ jobs:
       - name: init
         run: npm ci && npx lerna exec -- npm ci
 
-      - name: '@extended/async'
-        if: ${{ !cancelled() }}
-        run: bash scripts/release.sh @extended/async
-
       - name: '@extended/time'
         if: ${{ !cancelled() }}
         run: bash scripts/release.sh @extended/time
-
-      - name: '@extended/values'
-        if: ${{ !cancelled() }}
-        run: bash scripts/release.sh @extended/values
 
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
