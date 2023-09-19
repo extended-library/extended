@@ -25,7 +25,8 @@ jobs:
       matrix:
         package: [
           '@extended/async',
-          '@extended/time'
+          '@extended/time',
+          '@extended/values'
         ]
 
     steps:
@@ -88,7 +89,8 @@ jobs:
       matrix:
         package: [
           '@extended/async',
-          '@extended/time'
+          '@extended/time',
+          '@extended/values'
         ]
 
     steps:
@@ -157,6 +159,10 @@ jobs:
       - name: '@extended/time'
         if: ${{ !cancelled() }}
         run: bash scripts/release.sh @extended/time
+
+      - name: '@extended/values'
+        if: ${{ !cancelled() }}
+        run: bash scripts/release.sh @extended/values
 
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
