@@ -28,6 +28,6 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "lerna": "^6.6.2"
+    "lerna": "^7.3.0"
   }
 }
