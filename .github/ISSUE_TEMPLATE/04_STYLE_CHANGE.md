@@ -1,7 +1,7 @@
 ---
 name: "\U0001f3a8 Code Style"
-about: Code style changes (whitespaces, formatting, missing semicolons, etc.) that don't affect the meaning of the code.
-title: 'style(scope?): SHORT, IMPERATIVE tense description of the change'
+about: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).
+title: 'style(scope?): SHORT, IMPERATIVE, tense description of the change'
 labels: 'enhancement'
 assignees: ''
 ---

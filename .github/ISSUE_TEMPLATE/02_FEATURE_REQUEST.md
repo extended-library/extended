@@ -1,7 +1,7 @@
 ---
 name: "\U0001F680 Feature Request"
 about: Suggest a feature or missing capability.
-title: 'feat(scope?): SHORT, IMPERATIVE tense description of the change'
+title: 'feat(scope?): SHORT, IMPERATIVE, tense description of the change'
 labels: 'enhancement'
 assignees: ''
 ---

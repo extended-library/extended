@@ -1,7 +1,7 @@
 ---
 name: "\u26a1 Performance"
 about: A code change that improves performance.
-title: 'perf(scope?): SHORT, IMPERATIVE tense description of the change'
+title: 'perf(scope?): SHORT, IMPERATIVE, tense description of the change'
 labels: 'enhancement'
 assignees: ''
 ---

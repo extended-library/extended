@@ -12,23 +12,23 @@ Before you doing so, **please read the following simple steps** on how to contri
 
 <br/>
 
-## 📑	Get Familiar With The Project And It's Tools
+## 📑	Get Familiar With The Project
 
 Check out **in detail** the:
 
- - **`README.md`**, especially the **Usage** and **API** sections
-
+ - **`README.md`**, especially the **Usage** / **CLI** / **API** sections
+ 
  - **`package.json`** for **NPM scripts**, additional **configs**, and **dependencies**
  
- - **`src`** directory for **sources**, **structure**, and **naming conventions**
+ - **`src`** / **`lib`** / **`bin`** directories for **sources**, **structure**, and **naming conventions**
 
- - **`*.js`** files for **coding style** and **commenting style**, and get familiar with [**StandardJS**][url-code]
+ - **`script(s)`** directory and the **project's `root`** for **tools**, **scripts**, **tasks**, and **configs**
 
- - **`tests`** directory for **tests**, the **test style**, the **test process**, and get familiar with [**Jest**][url-test]
+ - **`test(s)`** directory for **tests**, the **test style**, and the **test process**
 
- - **`scripts`** directory and the **project's `root`** for **tools**, **scripts**, **tasks**, **configs**, and get familiar with [**Gulp**][url-task]
+ - **`*.js(x)|.ts(x)`** source files for **coding style** and **commenting style**, and get familiar with [**StandardJS**][url-code-style-js] or [**TS-Standard**][url-code-style-ts]
 
- - [**Issues**][url-issues] and [**Commits**][url-commits] for the [**release workflow**][url-release] and get familiar with [**commitizen commit message conventions**][url-commit-style]
+  - [**Issues**][url-issues] and [**Commits**][url-commits] for the [**release workflow**][url-release] and get familiar with [**commitizen commit message conventions**][url-commit-style]
   
 <br/>
 
@@ -39,8 +39,6 @@ Check out **in detail** the:
  - If you **couldn't find** the relevant issue, **open a** [**New Issue**][url-new-issue] by choosing the ***appropriate and relevant issue type***.
  
  - **Follow the guide** of the issue type you chose and **describe your contribution in detail** and what change would you like to make.
-
- - **Adhere** to the [**Code of Conduct**][url-coc] for a more welcoming environment, productive contribution, and smoother experience.
 
  - **Wait for feedback before continuing** to the next steps. ***However, if the issue is clear*** *(a tiny bug, a build, or a doc typo, etc)* and ***the fix is simple***, you can ***continue and fix it***.
 
@@ -53,20 +51,20 @@ Check out **in detail** the:
    - **Clone your own fork**:
 
      ```bash
-     git clone https://github.com/<your-username>/duration.git
+     git clone https://github.com/<your-username>/<repo-name>.git
      ```
 
    - Navigate into the project's directory, **configure the remote**, then **install the dependencies**:
 
      ```bash
-     git remote add upstream https://github.com/js-standards/duration.git
-     npm install
+     git remote add upstream https://github.com/<source-username>/<repo-name>.git     
+     npm i
      ```     
 
    - If you cloned a while ago, **get the latest changes** from upstream, then **update the dependencies**:
 
      ```bash
-     git checkout master && git pull upstream master
+     git checkout main && git pull upstream main
      rm -rf node_modules && npm install
      ``` 
  
@@ -115,11 +113,7 @@ Check out **in detail** the:
  
  - **Commit your changes** in that branch **in logical chunks**:
  
-   - Make sure to adhere to [**commitizen**][url-commit-style] conventions, **otherwise your code is unlikely to be merged into the main project**. For your own convenience, ***optionally*** you can run this NPM script to help with your commit messages:
-   
-     ```bash
-     npx git-cz
-     ```
+   - Make sure to adhere to [**commitizen**][url-commit-style] conventions, **otherwise your code is unlikely to be merged into the main project**.
 
    - For the **main change** ***(when you're done with your fix/feature/test/etc.)*** use the proper [**commit message format**][url-commit-format]:
 
@@ -138,7 +132,8 @@ Check out **in detail** the:
        ```
        fix(validator): fix middle name validation
  
-       Fix the broken middle name validation, when choosing `detailed` name option for first, middle, and last name. Also add a boolean toggle for middle name validaton.
+       Fix the broken middle name validation, when choosing `detailed` name option
+       for first, middle, and last name. Also add a boolean toggle for middle name validaton.
  
        Closes #42
        ```
@@ -170,7 +165,7 @@ Check out **in detail** the:
 
  - **Ensure consistency and quality** throughout all changes:
 
-   - Follow and adhere to [**StandardJS**][url-code] coding style and make sure the **tests run without errors** by running:
+   - Follow and adhere to [**StandardJS**][url-code-style-js] or [**TS-Standard**][url-code-style-ts] coding style and make sure the **tests run without errors** by running:
 
      ```bash
      npm run lint && npm test
@@ -187,7 +182,7 @@ Check out **in detail** the:
    - Locally **merge** ***(or rebase)*** **the upstream branch** into your branch:
 
      ```bash
-     git pull [--rebase] upstream master
+     git pull [--rebase] upstream main
      ```
 
    - **Push your branch** up to **your fork**:
@@ -200,9 +195,9 @@ Check out **in detail** the:
 
 ## 🏁 Submit A Pull Request
 
- - Open a [**pull request**][url-pull-req], follow the descriptions, **fill out the sections** accordingly, and **reference the initial issue** [**in the pull request message**][url-pull-req-help] *(e.g.: fixes #42)* - if exists, so everybody will know what is fixed/improved.
+ - Open a [**pull request**][url-pull-req] and **reference the initial issue** [**in the pull request message**][url-pull-req-help] *(e.g.: fixes #42)*. Write a **good description and title**, so everybody will know what is fixed/improved.
 
- - For **ambitious changes**, open a Pull Request as soon as possible with the `[WIP]` prefix in the title, in order to get feedback and help from the community. 
+ - For ambitious changes, open a Pull Request as soon as possible with the `[WIP]` prefix in the title, in order to get feedback and help from the community. 
  
  - **If it makes sense**, add screenshots, gifs, etc., so it will be easier to see what is going on.
  
@@ -210,11 +205,10 @@ Check out **in detail** the:
 
  - Make sure [**GitHub Actions**][url-ci] runs all tests **without errors** on your **own branch** (*if GitHub Actions errors out on your own branch, fix the issues, then commit and push again until all tests run without errors)*.
 
- - **IMPORTANT**: by submitting a change, you **agree to allow the project owners** to license your work under the terms of:
+ - **IMPORTANT**: by submitting a change, you **agree to allow the project owner(s)** to license your work under the terms of:
  
-   - [**ISC License**][url-license-isc] ***(if it includes code changes)***
-   - [**CC BY 3.0 License**][url-license-cca-3] ***(if it includes documentation changes)***
-   - [**CC BY 4.0 License**][url-license-cca-4] ***(if it includes media, graphical, presentation changes)***
+   - [**MIT License**][url-license-mit] ***(if it includes code changes)***
+   - [**CCA 3.0 Unported License**][url-license-cca] ***(if it includes documentation changes)***
 
 <br/>
 
@@ -233,33 +227,35 @@ Your **contribution will be reviewed** before accepted. ***You may get feedback*
   <i>...for your</i> <b><i>time and contribution</i></b>. ❤️
 </p>
 
-  <!--- References ============================================================================ -->
+<!--- References =============================================================================== -->
 
-  <!--- URLs -->
-  [url-commits]:       https://github.com/js-standards/duration/commits
-  [url-issues]:        https://github.com/js-standards/duration/issues
-  [url-new-issue]:     https://github.com/js-standards/duration/issues/new/choose
-  [url-coc]:           https://github.com/js-standards/duration/blob/master/.github/CODE_OF_CONDUCT.md
-  [url-commit-style]:  https://github.com/semantic-release/semantic-release/blob/master/CONTRIBUTING.md#commit-message-guidelines
-  [url-commit-format]: https://github.com/semantic-release/semantic-release/blob/master/CONTRIBUTING.md#commit-message-format  
-  [url-rebase]:        https://help.github.com/en/github/using-git/about-git-rebase
-  
-  [url-code]:      https://standardjs.com
-  [url-test]:      https://jestjs.io
-  [url-task]:      https://gulpjs.com
-  [url-commit]:    https://commitizen.github.io/cz-cli
-  [url-release]:   https://semantic-release.gitbook.io/semantic-release
-  [url-ci]:        https://github.com/js-standards/duration/actions?query=workflow%3Aci
+<!--- Badges -->
+[badge-code]:    https://img.shields.io/badge/style-standard-f1d300.svg?style=flat-square&logo=javascript
+[badge-commit]:  https://img.shields.io/badge/commit-commitizen-fe7d37.svg?style=flat-square&logo=git
+[badge-release]: https://img.shields.io/badge/&#11091;%20release-semantic--release-e10079.svg?style=flat-square
+[badge-ci]:      https://img.shields.io/badge/build-passing-brightgreen
 
-  [url-license-isc]:   https://github.com/js-standards/duration/blob/master/LICENSE.md
-  [url-license-cca-3]: https://creativecommons.org/licenses/by/3.0
-  [url-license-cca-4]: https://creativecommons.org/licenses/by/4.0
+<!--- URLs -->
+[url-commits]:       https://github.com/extended-library/extended/commits
+[url-issues]:        https://github.com/extended-library/extended/issues
+[url-new-issue]:     https://github.com/extended-library/extended/issues/new/choose
+[url-commit-style]:  https://github.com/semantic-release/semantic-release/blob/master/CONTRIBUTING.md#commit-message-guidelines
+[url-commit-format]: https://github.com/semantic-release/semantic-release/blob/master/CONTRIBUTING.md#commit-message-format  
+[url-rebase]:        https://help.github.com/en/github/using-git/about-git-rebase
 
-  [url-help-fork]: https://help.github.com/en/github/getting-started-with-github/fork-a-repo
+[url-code-style-js]: https://standardjs.com
+[url-code-style-ts]: https://www.npmjs.com/package/ts-standard
+[url-commit]:        https://commitizen.github.io/cz-cli
+[url-release]:       https://semantic-release.gitbook.io/semantic-release
+[url-ci]:            https://github.com/extended-library/extended/actions
 
-  [url-bugs]:            https://github.com/js-standards/duration/issues
-  [url-standard]:        https://standardjs.com
-  [url-npm-contrib-doc]: https://docs.npmjs.com/files/package.json#people-fields-author-contributors
-  [url-pull-req]:        https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#creating-the-pull-request
-  [url-pull-req-help]:   https://blog.github.com/2013-05-14-closing-issues-via-pull-requests
-  [url-pull-req-edit]:   https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork
+[url-license-mit]: https://github.com/extended-library/extended/blob/main/LICENSE
+[url-license-cca]: https://creativecommons.org/licenses/by/3.0
+
+[url-help-fork]: https://help.github.com/en/github/getting-started-with-github/fork-a-repo
+
+[url-bugs]:            https://github.com/extended-library/extended/issues
+[url-npm-contrib-doc]: https://docs.npmjs.com/files/package.json#people-fields-author-contributors
+[url-pull-req]:   https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#creating-the-pull-request
+[url-pull-req-help]:   https://blog.github.com/2013-05-14-closing-issues-via-pull-requests
+[url-pull-req-edit]:   https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork

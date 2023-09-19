@@ -1,0 +1,169 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - feat/*
+
+  pull_request:
+    branches:
+      - main
+      - feat/*
+
+  schedule:
+    - cron: '0 3 * * *' # run every day at 3:00 AM (UTC)
+
+jobs:
+  # ----------------------------------------------------------------------------
+  test:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+
+    strategy:
+      fail-fast: false
+      matrix:
+        package: [
+          '@extended/async',
+          '@extended/time',
+          '@extended/values'
+        ]
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: init
+        run: >
+          npm ci &&
+          npx lerna exec --scope ${{ matrix.package }} --
+          npm ci
+
+      - name: check commits
+        if: ${{ !cancelled() }}
+        run: >
+          npx lerna exec --scope ${{ matrix.package }} --
+          npx commitlint
+          --from ${{ github.event.pull_request.base.sha }}
+          --to ${{ github.event.pull_request.head.sha }}
+          --verbose
+
+      - name: check lint
+        if: ${{ !cancelled() }}
+        run: >
+          npx lerna exec --scope ${{ matrix.package }} --
+          npm run check:lint
+
+      - name: check types
+        if: ${{ !cancelled() }}
+        run: >
+          npx lerna exec --scope ${{ matrix.package }} --
+          npm run check:types
+
+      - name: test
+        run: >
+          npx lerna exec --scope ${{ matrix.package }} --
+          npm run test:coverage
+
+  # ----------------------------------------------------------------------------
+  coverage:
+    needs: test
+
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+
+    # run if it was NOT triggered by schedule
+    # and if it was NOT triggered by Dependabot
+    # and if it IS the main branch
+    if: |
+      github.event_name != 'schedule' &&
+      github.actor != 'dependabot[bot]' &&
+      github.ref == 'refs/heads/main'
+
+    strategy:
+      fail-fast: false
+      matrix:
+        package: [
+          '@extended/async',
+          '@extended/time',
+          '@extended/values'
+        ]
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: init
+        run: >
+          npm ci &&
+          npx lerna exec --scope ${{ matrix.package }} --
+          npm ci
+
+      - name: generate coverage
+        run: >
+          npx lerna exec --scope ${{ matrix.package }} --
+          npm run test:coverage
+
+      - name: prepare coverage flag
+        id: coverage_flag
+        run: |
+          coverage_flag=$(echo "${{ matrix.package }}" | sed 's/@//;s/\//-/g')
+          echo "coverage_flag=$coverage_flag" >> $GITHUB_ENV
+
+      - name: upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          flags: ${{ env.coverage_flag }}
+
+    env:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+  # ----------------------------------------------------------------------------
+  release:
+    needs: coverage
+
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+
+    # run if it was NOT triggered by schedule
+    # and if it was NOT triggered by Dependabot
+    # and if it IS the main branch
+    if: |
+      github.event_name != 'schedule' &&
+      github.actor != 'dependabot[bot]' &&
+      github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: init
+        run: npm ci && npx lerna exec -- npm ci
+
+      - name: '@extended/async'
+        if: ${{ !cancelled() }}
+        run: bash scripts/release.sh @extended/async
+
+      - name: '@extended/time'
+        if: ${{ !cancelled() }}
+        run: bash scripts/release.sh @extended/time
+
+      - name: '@extended/values'
+        if: ${{ !cancelled() }}
+        run: bash scripts/release.sh @extended/values
+
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

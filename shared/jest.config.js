@@ -1,7 +1,7 @@
 module.exports = {
-  collectCoverageFrom: [
-    'src/index.js'
-  ],
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  setupFilesAfterEnv: ['jest-extended/all'],
   coverageThreshold: {
     global: {
       branches: 100,

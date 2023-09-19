@@ -1,7 +1,7 @@
 ---
 name: "\U0001f9f9 Chore"
-about: Other changes that don't affect source, config, or test files (readmes, licenses, .md files, git configs, plain/new/empty/initial files, etc.).
-title: 'chore(scope?): SHORT, IMPERATIVE tense description of the change'
+about: Changes to the build process or auxiliary tools and libraries (doc generation, plain new empty/initial files, etc.).
+title: 'chore(scope?): SHORT, IMPERATIVE, tense description of the change'
 labels: 'enhancement'
 assignees: ''
 ---

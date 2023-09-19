@@ -1,7 +1,7 @@
 ---
-name: "\U0001F9F1 CI/CD"
-about: Changes to the CI/CD configuration files and scripts (GitHub Actions, TravisCI, CircleCI, BrowserStack, SauceLabs, semantic-release, etc.).
-title: 'ci(scope?): SHORT, IMPERATIVE tense description of the change'
+name: "\U0001F3D7 CI/CD"
+about: Changes to the CI or CD configuration files and scripts (GitHub Actions, CircleCI, etc.).
+title: 'ci(scope?): SHORT, IMPERATIVE, tense description of the change'
 labels: 'enhancement'
 assignees: ''
 ---

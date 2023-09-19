@@ -1,7 +1,7 @@
 ---
 name: "\U0001F41E Bug Report"
-about: 'Report a bug, a faulty feature, or a security issue.'
-title: 'bug(scope?): SHORT, IMPERATIVE tense description of the change'
+about: 'Report a bug.'
+title: 'bug(scope?): SHORT, IMPERATIVE, tense description of the change'
 labels: 'bug'
 assignees: ''
 ---
