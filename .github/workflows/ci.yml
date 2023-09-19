@@ -24,6 +24,7 @@ jobs:
       fail-fast: false
       matrix:
         package: [
+          '@extended/async',
           '@extended/time'
         ]
 
@@ -86,6 +87,7 @@ jobs:
       fail-fast: false
       matrix:
         package: [
+          '@extended/async',
           '@extended/time'
         ]
 
@@ -147,6 +149,10 @@ jobs:
 
       - name: init
         run: npm ci && npx lerna exec -- npm ci
+
+      - name: '@extended/async'
+        if: ${{ !cancelled() }}
+        run: bash scripts/release.sh @extended/async
 
       - name: '@extended/time'
         if: ${{ !cancelled() }}
