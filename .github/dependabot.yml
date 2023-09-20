@@ -9,6 +9,7 @@ updates:
       day: "sunday"
       time: "03:00"
       timezone: "UTC"
+    target-branch: "deps"
     commit-message:
       prefix: "ci(deps)"
 
@@ -18,6 +19,7 @@ updates:
       interval: "daily"
       time: "03:00"
       timezone: "UTC"
+    target-branch: "deps"
     versioning-strategy: increase
     commit-message:
       prefix: "perf(deps)"
