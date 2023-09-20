@@ -43,15 +43,6 @@ jobs:
           npx lerna exec --scope ${{ matrix.package }} --
           npm ci
 
-      - name: check commits
-        if: ${{ !cancelled() }}
-        run: >
-          npx lerna exec --scope ${{ matrix.package }} --
-          npx commitlint
-          --from ${{ github.event.pull_request.base.sha }}
-          --to ${{ github.event.pull_request.head.sha }}
-          --verbose
-
       - name: check lint
         if: ${{ !cancelled() }}
         run: >
@@ -70,8 +61,52 @@ jobs:
           npm run test:coverage
 
   # ----------------------------------------------------------------------------
-  coverage:
+  commitlint:
     needs: test
+
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+
+    # run if it was NOT triggered by schedule
+    # and if it was NOT triggered by Dependabot
+    if: |
+      github.event_name != 'schedule' &&
+      github.actor != 'dependabot[bot]'
+
+    strategy:
+      fail-fast: false
+      matrix:
+        package: [
+          '@extended/async',
+          '@extended/time',
+          '@extended/values'
+        ]
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: init
+        run: >
+          npm ci &&
+          npx lerna exec --scope ${{ matrix.package }} --
+          npm ci
+
+      - name: check commits
+        run: >
+          npx lerna exec --scope ${{ matrix.package }} --
+          npx commitlint
+          --from ${{ github.event.pull_request.base.sha }}
+          --to ${{ github.event.pull_request.head.sha }}
+          --verbose
+
+  # ----------------------------------------------------------------------------
+  coverage:
+    needs: commitlint
 
     runs-on: ubuntu-20.04
     timeout-minutes: 10
