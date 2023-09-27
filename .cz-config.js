@@ -45,6 +45,7 @@ module.exports = {
     { name: 'root' },
     { name: 'async' },
     { name: 'time' },
+    { name: 'types' },
     { name: 'values' },
   ],
   messages: {

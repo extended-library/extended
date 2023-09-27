@@ -26,6 +26,7 @@ jobs:
         package: [
           '@extended/async',
           '@extended/time',
+          '@extended/types',
           '@extended/values'
         ]
 
@@ -79,6 +80,7 @@ jobs:
         package: [
           '@extended/async',
           '@extended/time',
+          '@extended/types',
           '@extended/values'
         ]
 
@@ -125,6 +127,7 @@ jobs:
         package: [
           '@extended/async',
           '@extended/time',
+          '@extended/types',
           '@extended/values'
         ]
 
@@ -194,6 +197,10 @@ jobs:
       - name: '@extended/time'
         if: ${{ !cancelled() }}
         run: bash scripts/release.sh @extended/time
+
+      - name: '@extended/types'
+        if: ${{ !cancelled() }}
+        run: bash scripts/release.sh @extended/types
 
       - name: '@extended/values'
         if: ${{ !cancelled() }}
