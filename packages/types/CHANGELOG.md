@@ -1,3 +1,10 @@
+# [@extended/types-v1.1.1](https://github.com/extended-library/extended/compare/@extended/types-v1.1.0...@extended/types-v1.1.1) (2023-10-01)
+
+
+### Bug Fixes
+
+* **values:** add missing package root Result type export ([4e48fa4](https://github.com/extended-library/extended/commit/4e48fa4df3451f8cddc879769a23434a94388dd6))
+
 # [@extended/types-v1.1.0](https://github.com/extended-library/extended/compare/@extended/types-v1.0.0...@extended/types-v1.1.0) (2023-10-01)
 
 
