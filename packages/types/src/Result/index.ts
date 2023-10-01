@@ -20,6 +20,8 @@ class ResultCreator<T = unknown, E = unknown> {
     this.setSuccess = this.setSuccess.bind(this)
     this.setError = this.setError.bind(this)
     this.getResult = this.getResult.bind(this)
+    this.getResultWithSuccess = this.getResultWithSuccess.bind(this)
+    this.getResultWithError = this.getResultWithError.bind(this)
   }
 
   public setSuccess (result: T): void {
