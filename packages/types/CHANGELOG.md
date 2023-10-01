@@ -1,3 +1,15 @@
+# [@extended/types-v1.2.0](https://github.com/extended-library/extended/compare/@extended/types-v1.1.1...@extended/types-v1.2.0) (2023-10-01)
+
+
+### Bug Fixes
+
+* **types:** add missing getResultWithSuccess and getResultWithError binds ([ddfe6c5](https://github.com/extended-library/extended/commit/ddfe6c5651904fbaf811d675845e6381d9e5fc64))
+
+
+### Features
+
+* **types:** add getResultWithSuccess and getResultWithError shorthands ([13465e5](https://github.com/extended-library/extended/commit/13465e5cea06bc4b9cdca38e6c0109bd46586f39))
+
 # [@extended/types-v1.1.1](https://github.com/extended-library/extended/compare/@extended/types-v1.1.0...@extended/types-v1.1.1) (2023-10-01)
 
 
