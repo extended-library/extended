@@ -1,8 +1,8 @@
-import Result from '.'
+import { createResult } from '.'
 
 describe('@extended/types/Result', () => {
   test('basic usage - success', () => {
-    const { setSuccess, getResult } = new Result<number>()
+    const { setSuccess, getResult } = createResult<number>()
 
     setSuccess(1)
 
@@ -14,7 +14,7 @@ describe('@extended/types/Result', () => {
   })
 
   test('basic usage - error', () => {
-    const { setError, getResult } = new Result<number>()
+    const { setError, getResult } = createResult<number>()
 
     setError(new TypeError())
 
@@ -26,7 +26,7 @@ describe('@extended/types/Result', () => {
   })
 
   test('basic usage - result destructuring', () => {
-    const { setSuccess, getResult } = new Result<string>()
+    const { setSuccess, getResult } = createResult<string>()
 
     setSuccess('abc')
 
@@ -38,7 +38,7 @@ describe('@extended/types/Result', () => {
   })
 
   test('result never error', () => {
-    const { getResult } = new Result()
+    const { getResult } = createResult()
 
     expect(() => getResult()).toThrowWithMessage(
       Error,

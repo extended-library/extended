@@ -1,10 +1,10 @@
-interface Result<T = unknown, E = unknown> {
+export interface Result<T = unknown, E = unknown> {
   success: boolean
   error: E
   result: T
 }
 
-export default class ResultCreator<T = unknown, E = unknown> {
+class ResultCreator<T = unknown, E = unknown> {
   private _success: boolean
   private _error?: E
   private _result?: T
@@ -38,7 +38,7 @@ export default class ResultCreator<T = unknown, E = unknown> {
     this._isInit = true
   }
 
-  public getResult (): Readonly<Result<T, E>> {
+  public getResult (): Result<T, E> {
     if (!this._isInit) {
       throw new Error('Result was never set, call setSuccess() or setError() first.')
     }
@@ -51,4 +51,8 @@ export default class ResultCreator<T = unknown, E = unknown> {
 
     return Object.freeze(result)
   }
+}
+
+export function createResult<T = unknown, E = unknown> (): ResultCreator<T, E> {
+  return new ResultCreator<T, E>()
 }
