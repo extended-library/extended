@@ -1,1 +1,4 @@
-export { createResult } from './Result'
+export {
+  type Result,
+  createResult
+} from './Result'
