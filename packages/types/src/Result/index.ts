@@ -51,6 +51,16 @@ class ResultCreator<T = unknown, E = unknown> {
 
     return Object.freeze(result)
   }
+
+  public getResultWithSuccess (result: T): Result<T, E> {
+    this.setSuccess(result)
+    return this.getResult()
+  }
+
+  public getResultWithError (error: E): Result<T, E> {
+    this.setError(error)
+    return this.getResult()
+  }
 }
 
 export function createResult<T = unknown, E = unknown> (): ResultCreator<T, E> {
