@@ -44,8 +44,8 @@ module.exports = {
   scopes: [
     { name: 'root' },
     { name: 'async' },
+    { name: 'result' },
     { name: 'time' },
-    { name: 'types' },
     { name: 'values' },
   ],
   messages: {
