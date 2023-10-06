@@ -25,8 +25,8 @@ jobs:
       matrix:
         package: [
           '@extended/async',
+          '@extended/result',
           '@extended/time',
-          '@extended/types',
           '@extended/values'
         ]
 
@@ -79,8 +79,8 @@ jobs:
       matrix:
         package: [
           '@extended/async',
+          '@extended/result',
           '@extended/time',
-          '@extended/types',
           '@extended/values'
         ]
 
@@ -126,8 +126,8 @@ jobs:
       matrix:
         package: [
           '@extended/async',
+          '@extended/result',
           '@extended/time',
-          '@extended/types',
           '@extended/values'
         ]
 
@@ -194,13 +194,13 @@ jobs:
         if: ${{ !cancelled() }}
         run: bash scripts/release.sh @extended/async
 
+      - name: '@extended/result'
+        if: ${{ !cancelled() }}
+        run: bash scripts/release.sh @extended/result
+
       - name: '@extended/time'
         if: ${{ !cancelled() }}
         run: bash scripts/release.sh @extended/time
-
-      - name: '@extended/types'
-        if: ${{ !cancelled() }}
-        run: bash scripts/release.sh @extended/types
 
       - name: '@extended/values'
         if: ${{ !cancelled() }}
