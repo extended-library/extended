@@ -1,9 +1,9 @@
-# @extended/types
+# @extended/result
 
 ## 📦 Installation
 
 ```
-npm i @extended/types
+npm i @extended/result
 ```
 
 ## ⭐ Related

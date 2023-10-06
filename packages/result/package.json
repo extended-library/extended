@@ -1,7 +1,7 @@
 {
-  "name": "@extended/types",
+  "name": "@extended/result",
   "version": "0.0.0-development",
-  "description": "JS utility types.",
+  "description": "A result type for handling success and error outcomes alongside the value.",
   "author": "Richard King <richrdkng@gmail.com> (https://richrdkng.com)",
   "license": "MIT",
   "repository": {
@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/extended-library/extended/issues"
   },
-  "homepage": "https://github.com/extended-library/extended/tree/main/packages/types#readme",
+  "homepage": "https://github.com/extended-library/extended/tree/main/packages/result#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -26,7 +26,7 @@
     ]
   },
   "keywords": [
-    "types",
+    "result",
     "util",
     "utility",
     "helper",
