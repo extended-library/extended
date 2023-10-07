@@ -46,6 +46,7 @@ module.exports = {
     { name: 'async' },
     { name: 'result' },
     { name: 'time' },
+    { name: 'timestamp' },
     { name: 'values' },
   ],
   messages: {
