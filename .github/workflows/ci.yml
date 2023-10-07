@@ -27,6 +27,7 @@ jobs:
           '@extended/async',
           '@extended/result',
           '@extended/time',
+          '@extended/timestamp',
           '@extended/values'
         ]
 
@@ -81,6 +82,7 @@ jobs:
           '@extended/async',
           '@extended/result',
           '@extended/time',
+          '@extended/timestamp',
           '@extended/values'
         ]
 
@@ -128,6 +130,7 @@ jobs:
           '@extended/async',
           '@extended/result',
           '@extended/time',
+          '@extended/timestamp',
           '@extended/values'
         ]
 
@@ -201,6 +204,10 @@ jobs:
       - name: '@extended/time'
         if: ${{ !cancelled() }}
         run: bash scripts/release.sh @extended/time
+
+      - name: '@extended/timestamp'
+        if: ${{ !cancelled() }}
+        run: bash scripts/release.sh @extended/timestamp
 
       - name: '@extended/values'
         if: ${{ !cancelled() }}
